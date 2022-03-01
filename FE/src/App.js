@@ -1,4 +1,4 @@
-// import ClientLayOut from "layout/ClientLayOut";
+import ClientLayOut from "layout/ClientLayOut";
 import { clientRoutes } from "router/router";
 
 import {

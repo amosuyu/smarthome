@@ -1,9 +1,10 @@
 import React from "react";
+import SliderHome from "./SliderHome/SliderHome";
 
 export default function ClientHome() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <SliderHome />
     </div>
   );
 }
