@@ -1,21 +1,36 @@
-import Login from './auth/Login';
+// import ClientLayOut from "layout/ClientLayOut";
+import { clientRoutes } from "router/router";
+
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import Home from './container/Home';
 
 function App() {
+
+  const renderLayout = (routes) => {
+    return (
+      routes?.map((route, i) => {
+        const { path, element, index } = route;
+        return (
+          <Route key={i} element={element} path={path} index={index} />
+        )
+      })
+    )
+  }
+
   return (
-    <div>
-      <BrowserRouter>
+    <>
+      <Router>
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route path="/" element={<ClientLayOut />}>
+            {renderLayout(clientRoutes)}
+          </Route>
+          <Route path="*" element={<h1>page not found</h1>} />
         </Routes>
-      </BrowserRouter>,
-    </div>
+      </Router>,
+    </>
   );
 }
 
