@@ -45,7 +45,7 @@ const Navbar = () => {
     console.log(open);
   };
   return (
-    <div className="h-16 flex justify-between md:justify-between items-center border-b-2 px-2 w-[500px] md:w-full  sticky">
+    <div className="h-16 flex justify-between z-[100]  md:justify-between items-center border-b-2 px-2 w-[500px] md:w-full  sticky">
       <div className="text-[25px]">
         {!open ? (
           <AiOutlineMenu
@@ -59,18 +59,18 @@ const Navbar = () => {
           />
         )}
         {open && (
-          <div className=" absolute top-16 bg-white w-full  h-28   md:w-1/2  ">
+          <div className=" absolute top-16 bg-white w-full  h-28   md:w-1/2 ">
             {nav.map((item, index) => (
-              <ul className=" w-full  flex justify-center items-center md:w-full md:text-center md:boder-r-2  ">
+              <ul className=" w-full  flex justify-center items-center   md:w-full md:text-center md:boder-r-2  " key={index}>
                 <li
-                  className="py-7 text-base hover:text-[#1e2d7d] transition-all font-semibold 
+                  className="py-7 text-base text-black hover:text-[#1e2d7d] transition-all font-semibold 
                                       md:w-full md:hover:border-b-2 md:font-bold md:text-lg"
                 >
-                  <Link to={item.path}>{item.display}</Link>
+                  <Link to={item.path} className='text-black hover:text-[#1e2d7d]'>{item.display}</Link>
                 </li>
               </ul>
             ))}
-            <div className="flex justify-evenly items-center mt-[60px] text-3xl hover:text-[#1e2d7d] cursor-pointer transition-all ">
+            <div className="flex justify-evenly items-center mt-[60px] text-3xl md:hover:text-[#1e2d7d] cursor-pointer transition-all ">
               <Link to="/">
                 <AiFillTwitterCircle className="" />
               </Link>
@@ -91,12 +91,12 @@ const Navbar = () => {
         <img src={logo} alt="" className="object-cover" />
       </div>
       <div className="flex items-center gap-4 md:gap-16 px-3">
-        <AiOutlineSearch className="text-xl text-[#1e2d7d] md:text-3xl md:cursor-pointer  " />
+        <AiOutlineSearch className="text-xl  md:text-3xl md:cursor-pointer  " />
         <Link to="/login">
-          <AiOutlineUser className="text-2xl text-[#1e2d7d] md:hover:shadow-lg md:text-3xl" />
+          <AiOutlineUser className="text-2xl  md:hover:shadow-lg md:text-3xl" />
         </Link>
         <Link to="/cart">
-          <AiOutlineShoppingCart className="text-2xl text-[#1e2d7d]  md:hover:shadow-lg md:text-3xl" />
+          <AiOutlineShoppingCart className="text-2xl  md:hover:shadow-lg md:text-3xl" />
         </Link>
       </div>
     </div>
