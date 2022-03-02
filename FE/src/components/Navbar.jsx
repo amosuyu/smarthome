@@ -45,7 +45,7 @@ const Navbar = () => {
     console.log(open);
   };
   return (
-    <div className="h-16 flex justify-between z-[100]  md:justify-between md:gap-14 items-center border-b-2 px-2 w-[400px] md:w-full  sticky">
+    <div className="h-16 flex justify-start gap-7 z-[100]  md:justify-between md:gap-14 items-center border-b-2 px-2 w-[400px] md:w-full  sticky">
       <div className="text-[25px]">
         {!open ? (
           <AiOutlineMenu
@@ -59,9 +59,9 @@ const Navbar = () => {
           />
         )}
         {open && (
-          <div className=" absolute top-16 bg-white w-full  h-auto   md:w-1/4 md:left-0 md:z-100 md:h-full    ">
+          <div className=" absolute top-16 bg-white w-full left-0  h-auto   md:w-1/4 md:left-0 md:z-100 md:h-full    ">
             {nav.map((item, index) => (
-              <ul className=" w-full flex justify-center items-center h-full  md:w-full md:text-center md:boder-r-2   " key={index}>
+              <ul className=" w-full flex p-0 justify-center items-center h-full  md:w-full md:text-center md:boder-r-2   " key={index}>
                 <li
                   className="py-7 text-base bg-white text-black hover:text-[#1e2d7d] transition-all font-semibold 
                                       md:w-full md:hover:border-b-2 md:font-bold md:text-lg"
@@ -70,7 +70,7 @@ const Navbar = () => {
                 </li>
               </ul>
             ))}
-            <div className="flex justify-evenly    items-center mt-[60px] text-3xl  md:hover:text-[#1e2d7d ] md:pb-3 cursor-pointer transition-all ">
+            <div className="flex justify-center gap-4    items-center mt-[60px] text-3xl  md:hover:text-[#1e2d7d ] md:pb-3 cursor-pointer transition-all ">
               <Link to="/">
                 <AiFillTwitterCircle className="" />
               </Link>
