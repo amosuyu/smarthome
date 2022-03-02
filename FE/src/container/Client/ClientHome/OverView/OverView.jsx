@@ -5,13 +5,13 @@ import { RadioGroup } from '@headlessui/react'
 // import { product } from './fake-data-product'
 
 const product = {
-  name: 'Basic Tee 6-Pack',
+  name: 'Insteon Remote Control Dimmer Keypad, 6-Butt',
   price: '$192',
   href: '#',
-  breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
-  ],
+  // breadcrumbs: [
+  //   { id: 1, name: 'Men', href: '#' },
+  //   { id: 2, name: 'Clothing', href: '#' },
+  // ],
   images: [
     {
       src: 'https://cdn.shopify.com/s/files/1/0375/3816/8965/products/keypad-6-button-front-800x800_130x.jpg?v=1591109400',
@@ -35,6 +35,7 @@ const product = {
     { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
     { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
   ],
+  
 }
 
 
@@ -52,22 +53,22 @@ export default function OverView() {
 
 
   return (
-    <div className="bg-white flex mt-5 flex-col ">
+    <div className="bg-white flex mt-5 flex-col justify-center items-center md:flex md:flex-row md:justify-center ">
       <div className="">
         {/* Image gallery */}
-          <div className=" md:bottom-0">
+          <div className="h-[400px] md:h-[600px]  ">
             <img
               src={product.images[2].src}
               alt={product.images[2].alt}
-              className=""
+              className="h-full "
             />
           </div>
         </div>
 
         {/* Product info */}
-        <div className="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
+        <div className="w-1/2">
+          <div className="">
+            <h1 className="text-2xl font-extrabold tracking-tigh font- text-gray-900 md:text-3xl">{product.name}</h1>
           </div>
 
           {/* Options */}
@@ -147,7 +148,7 @@ export default function OverView() {
 
               <button
                 type="submit"
-                className="mt-10 w-full bg-[#1e2d7d] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="mt-10 w-1/4 h-10 bg-[#1e2d7d] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Click Buy
               </button>
