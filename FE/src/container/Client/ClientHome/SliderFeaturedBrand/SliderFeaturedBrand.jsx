@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "./style.scss";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { actListCategory } from "./module/action";
+import { useDispatch } from "react-redux";
 
 export default function SliderFeaturedBrand() {
+  const dispatch = useDispatch()
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -68,6 +72,11 @@ export default function SliderFeaturedBrand() {
       },
     ],
   };
+
+  useEffect(() => {
+    dispatch(actListCategory())
+  }, [])
+  
 
   return (
     <div>
