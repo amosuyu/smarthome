@@ -59,6 +59,12 @@ class ProductController extends Controller
         $product= Product::find($id);
         return response()->json($product); 
     }
+    public function showbycategory($id)
+    {
+           $product = Product::where('category_id',$id)->get();
+          return response()->json($product); 
+
+    }
 
     public function update(Request $request, $id)
     {
