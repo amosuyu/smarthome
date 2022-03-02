@@ -1,4 +1,3 @@
-import axois from "axios"
 import { clientApi } from "apis/api";
 
 import { LIST_CATEGORY_REQUEST, LIST_CATEGORY_SUCCESS, LIST_CATEGORY_FAIL } from "./type";
@@ -19,7 +18,7 @@ export const actListCategory = () => {
     return (dispatch) => {
         dispatch(actListCategoryRequest())
         clientApi.category().then(res => {
-            dispatch(actListCategorySuccess(res))
+            dispatch(actListCategorySuccess(res.data))
         }).catch(err => {
             dispatch(actListCategoryFail(err))
             console.log(err)

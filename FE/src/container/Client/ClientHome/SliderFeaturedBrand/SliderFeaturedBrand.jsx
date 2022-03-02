@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "./style.scss";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { actListCategory } from "./module/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function SliderFeaturedBrand() {
   const dispatch = useDispatch();
-
+  const { dataCategory, loadding } = useSelector(
+    (state) => state.categoryReducer
+  );
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -81,84 +83,29 @@ export default function SliderFeaturedBrand() {
     <div>
       <p> Featured Brand - Insteon </p>
       <Slider {...settings}>
-        <div>
-          <div className="crs_model_home">
-            <div className="img_crs_home">
-              <img
-                src="https://bizweb.dktcdn.net/thumb/large/100/098/550/files/mo-hinh-iron-man-mark-46-polystone-ti-le-12-cao-35cm-mk46-civil-war-1.jpg?v=1575022160977"
-                alt="..."
-              />
-              <div className="hover_img_crs_home">
-                <img
-                  src="https://cf.shopee.vn/file/3e42d6c4fe4b3153f9d70d5075e0f3d2"
-                  alt="..."
-                />
+        {dataCategory.map((item, index) => {
+          const { title, price, photo } = item;
+          return (
+            <div key={index}>
+              <div className="crs_model_home">
+                <div className="img_crs_home">
+                  <img src={photo} alt="..." />
+                  <div className="hover_img_crs_home">
+                    <img
+                      src="https://cf.shopee.vn/file/3e42d6c4fe4b3153f9d70d5075e0f3d2"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <div className="content_modal_crs_home">
+                  <p className="name_text_crs_home">{title}</p>
+                  <p className="price_crs_home">{price}</p>
+                  <button className="btn_main btn_chose">Chose option</button>
+                </div>
               </div>
             </div>
-            <div className="content_modal_crs_home">
-              <p className="name_text_crs_home">name some thing</p>
-              <p className="price_crs_home">$454</p>
-              <button className="btn_main btn_chose">Chose option</button>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div className="crs_model_home">
-            <div className="img_crs_home">
-              <img
-                src="https://bizweb.dktcdn.net/thumb/large/100/098/550/files/mo-hinh-iron-man-mark-46-polystone-ti-le-12-cao-35cm-mk46-civil-war-1.jpg?v=1575022160977"
-                alt="..."
-              />
-              <div className="hover_img_crs_home">
-                <img
-                  src="https://cf.shopee.vn/file/3e42d6c4fe4b3153f9d70d5075e0f3d2"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div className="content_modal_crs_home">
-              <p className="name_text_crs_home">name some thing</p>
-              <p className="price_crs_home">$454</p>
-              <button className="btn_main btn_chose">Chose option</button>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div className="crs_model_home">
-            <div className="img_crs_home">
-              <img
-                src="https://bizweb.dktcdn.net/thumb/large/100/098/550/files/mo-hinh-iron-man-mark-46-polystone-ti-le-12-cao-35cm-mk46-civil-war-1.jpg?v=1575022160977"
-                alt="..."
-              />
-              <div className="hover_img_crs_home">
-                <img
-                  src="https://cf.shopee.vn/file/3e42d6c4fe4b3153f9d70d5075e0f3d2"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div className="content_modal_crs_home">
-              <p className="name_text_crs_home">name some thing</p>
-              <p className="price_crs_home">$454</p>
-              <button className="btn_main btn_chose">Chose option</button>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-        <div>
-          <h3>7</h3>
-        </div>
-        <div>
-          <h3>8</h3>
-        </div>
+          );
+        })}
       </Slider>
     </div>
   );
