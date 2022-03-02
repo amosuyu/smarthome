@@ -1,10 +1,14 @@
 import React from "react";
-import SliderHome from "./SliderHome/SliderHome";
+import Breadcrumb from "components/Breadcrumb/Breadcrumb";
+import ListDoorLock from "./ListDoorLock/ListDoorLock";
+import SliderFeaturedBrand from "./SliderFeaturedBrand/SliderFeaturedBrand";
 
 export default function ClientHome() {
   return (
     <div>
-      <SliderHome />
+      {/* <Breadcrumb /> */}
+      <SliderFeaturedBrand />
+      {/* <ListDoorLock /> */}
     </div>
   );
 }

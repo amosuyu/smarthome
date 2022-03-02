@@ -1,0 +1,75 @@
+.crs_home {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .crs_model_home {
+        position: relative;
+        padding: 20px;
+        box-shadow: 0 0 0 1px #e1e3e4 inset;
+
+        .img_crs_home {
+            position: relative;
+
+            img {
+                width: 15rem;
+                height: 18rem;
+                cursor: pointer;
+            }
+
+            .hover_img_crs_home {
+                position: absolute;
+                top: 0;
+                opacity: 1;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .content_modal_crs_home {
+            text-align: left;
+
+            .name_text_crs_home {
+                color: #1e2d7d;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 1.55;
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+                margin-top: 1rem;
+
+                &:hover {
+                    color: #00badb;
+                }
+            }
+
+            .price_crs_home {
+                color: #00badb;
+                font-size: 21px;
+
+            }
+
+            .btn_see_more {
+                font-size: 15px;
+                font-weight: 500;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 2px;
+                color: #00badb;
+                box-shadow: 0 0 0 1px #e1e3e4 inset;
+                width: 100%;
+                height: 40px;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: rgba(225, 227, 228, .5);
+                    color: #000;
+                }
+            }
+        }
+    }
+}

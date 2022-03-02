@@ -1,0 +1,56 @@
+.slick-slider {
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        .slick-arrow {
+            opacity: 1;
+
+        }
+
+    }
+
+    .slick-next {
+        right: 0;
+
+
+    }
+
+    .slick-prev {
+        left: 0;
+    }
+
+    .slick-arrow {
+        z-index: 999;
+        transition: all 0.2s linear;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        background-color: silver;
+        color: white;
+        opacity: 0;
+
+        .img_arrow {
+            display: inline-block;
+            margin-top: 13px;
+        }
+
+        &:hover {
+            background-color: #00badb;
+            opacity: 1;
+            color: white;
+        }
+
+        &::before {
+            content: none;
+        }
+    }
+
+    .slick-disabled {
+        display: none;
+    }
+}
