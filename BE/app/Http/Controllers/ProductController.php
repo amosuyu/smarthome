@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Categories;
 class ProductController extends Controller
 {
 
@@ -35,15 +36,23 @@ class ProductController extends Controller
                 $product->photo= $name;
             }
         }
-        // if($request->hasColumn('categories', 'id')){
-        //     $id_category->category_id = $request->input('category_id');
-        // }
-        $product->title = $request->input('title');        
-        $product->price = $request->input('price');        
-        $product->description = $request->input('description');      
-        $product->category_id = $request->input('category_id');     
-        $product->save();
-        return response()->json($product);
+        
+        if(Categories::find($request->input('category_id'))){
+            $product->title = $request->input('title');        
+            $product->price = $request->input('price');        
+            $product->description = $request->input('description');      
+            $product->category_id = $request->input('category_id');     
+            $product->save();
+            return response()->json($product);
+        }
+        else{
+            return response()->json(
+                [
+                    'status'=> 404, 
+                    'message' => 'Id category không hợp lệ', 
+                ]
+            );
+        }
     }
     public function show($id)
     {

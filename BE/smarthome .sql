@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 01, 2022 lúc 11:24 AM
+-- Thời gian đã tạo: Th3 02, 2022 lúc 03:18 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -52,8 +52,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Khóa thông minh ', 'Ở khóa thông minh', '2022-03-01 09:46:37', '2022-03-01 09:46:37'),
-(2, 'Khóa thông minh4', 'Ở khóa thông minh', '2022-03-01 09:46:49', '2022-03-01 09:46:49');
+(3, 'Hands-Free', 'Khóa rảnh tay', '2022-03-02 01:33:55', '2022-03-02 01:33:55'),
+(4, 'Keypads', 'Khóa số', '2022-03-02 01:38:14', '2022-03-02 01:38:14'),
+(5, 'Fingerprint', 'Khóa văn tay', '2022-03-02 01:38:22', '2022-03-02 01:38:22'),
+(6, 'Garage door', 'Khóa gara', '2022-03-02 01:38:38', '2022-03-02 01:38:38');
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `price`, `photo`, `description`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Nest x Yale Lock with Nest Connect', 1599000, '16461297231.jpg', 'The Connected Lock for a More Secure Nest Home\nRemote access - Unlock your door with a passcode and lock with a tap, requires Nest Connect or Nest Guard, (Nest Connect included and Nest Guard included in Secure Starter Pack sold separately)\nKeyless deadbolt - Secure and tamper-proof keyless deadbolt enables you to gain entry with unique passcodes\nAccess history - Receive alerts when someone locks & unlocks the door, and for low battery\nAuto-lock - It can lock automatically when Nest knows you’re away', 1, '2022-03-01 10:15:24', '2022-03-01 10:15:24');
+(1, 'Nest x Yale Lock with Nest Connect', 1599000, '16461297231.jpg', 'The Connected Lock for a More Secure Nest Home\nRemote access - Unlock your door with a passcode and lock with a tap, requires Nest Connect or Nest Guard, (Nest Connect included and Nest Guard included in Secure Starter Pack sold separately)\nKeyless deadbolt - Secure and tamper-proof keyless deadbolt enables you to gain entry with unique passcodes\nAccess history - Receive alerts when someone locks & unlocks the door, and for low battery\nAuto-lock - It can lock automatically when Nest knows you’re away', 3, '2022-03-01 10:15:24', '2022-03-01 10:15:24'),
+(5, 'August Smart Lock', 1290000, '1646185570vsi-pdp-det-19312-august-smart-lock-silver-side2-1000x1000-1a-2017-10-27_400x.jpg', 'The Perfect Low-cost Secure and Keyless Entry for Your Smart Home\nSecure, keyless entry for your smart home - Lock and unlock your door, control keyless access and keep track of who comes and goes, all from your phone*.\nControl access for anyone - Grant access for a few weeks, a few hours, a few minutes.\nBe sure you’re secure with DoorSense™ - Only August has DoorSense™ to tell you the door is completely closed and locked.\nKnow who’s coming and going - Track activity at your doorstep with a 24/7 Activity Feed.\nWorks with most standard deadbolts - Compatible with the widest range of standard deadbolts.\nKeep your existing lock and keys - Easily attaches to your existing deadbolt, so everyone can still use their keys.\nLocks automatically as you leave - Never worry if your door is locked again. Requires August Connect Wi-Fi Bridge or August Doorbell Cam Pro, sold separately\nWorks with August app - Available for Android, iOS and Apple Watch® devices*.', 3, '2022-03-02 01:46:10', '2022-03-02 01:46:10'),
+(6, 'August Connect Wi-Fi Remote Access Bridge', 870000, '1646185638august-connect_400x.jpg', 'An Intelligent, Secure Way to Lock or Unlock Your Door when You\'re Away from Home\n2nd Generation - includes updated firmware for manual lock operation and offline notifications\nCheck whether your August Smart Lock is locked from the August app\nPeace of mind - never wonder if you left your door unlocked\nBuzz people in - remotely unlock or lock your door for guests\nSecure - Immediately know when anyone enters or leaves your home\nComplete your smart home - designed to work with other compatible home products', 3, '2022-03-02 01:47:18', '2022-03-02 01:47:18'),
+(7, 'August Smart Lock Pro + Connect, Silver', 950000, '1646185683vai-pdp-msi-19315-side1-1000x1000-1a-2018-1-29_1_400x.jpg', 'Never Worry If Your Door Is Locked, Control and Monitor from Anywhere\nYour front door Smarter - Lock and unlock your door, control keyless access, and keep track of who comes and goes, all from your phone.\nBe sure you’re secure with DoorSense™ - Only August has DoorSense™ to tell you the door is completely closed and locked.\nControl access for anyone - Grant access for a few weeks, a few hours, or a few minutes.\nLocks automatically as you leave - Never worry if your door is locked again.\nUnlocks when you arrive - Auto-Unlock detects your arrival and unlocks the door automatically.\nSimply speak to lock your door - Tell Alexa, Siri, or the Google Assistant to control your August Smart Lock Pro + Connect.\nWorks with August app - Available for Android, iOS and Apple Watch® devices.', 3, '2022-03-02 01:48:03', '2022-03-02 01:48:03');
 
 -- --------------------------------------------------------
 
@@ -305,7 +310,7 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -335,7 +340,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

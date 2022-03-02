@@ -14,11 +14,8 @@
 */
 // Category
 $router->get('/category', 'CategoryController@index') ;
-
 $router->post('/category', 'CategoryController@store') ;
-
 $router->put('/category/update/{id}', 'CategoryController@update') ;
-
 $router->delete('/category/{id}', 'CategoryController@destroy') ;
 // Product
 $router->get('/products', 'ProductController@index') ;
