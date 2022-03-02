@@ -7,7 +7,7 @@ export default function ClientHome() {
   return (
     <div>
       {/* <Breadcrumb /> */}
-      <SliderFeaturedBrand />
+      {/* <SliderFeaturedBrand /> */}
       {/* <ListDoorLock /> */}
     </div>
   );

@@ -20,7 +20,7 @@ export default function ListDoorLock() {
         <div className="content_modal_crs_home">
           <p className="name_text_crs_home">name some thing</p>
           <p className="price_crs_home">$454</p>
-          <button className="btn_see_more">Quick view</button>
+          <button className="btn_main btn_see_more">Quick view</button>
         </div>
       </div>
       <div className="crs_model_home">
@@ -39,7 +39,7 @@ export default function ListDoorLock() {
         <div className="content_modal_crs_home">
           <p className="name_text_crs_home">name some thing</p>
           <p className="price_crs_home">$454</p>
-          <button className="btn_see_more">Quick view</button>
+          <button className="btn_main btn_see_more">Quick view</button>
         </div>
       </div>
       <div className="crs_model_home">
@@ -58,7 +58,7 @@ export default function ListDoorLock() {
         <div className="content_modal_crs_home">
           <p className="name_text_crs_home">name some thing</p>
           <p className="price_crs_home">$454</p>
-          <button className="btn_see_more">Quick view</button>
+          <button className="btn_main btn_see_more">Quick view</button>
         </div>
       </div>
       <div className="crs_model_home">
@@ -77,7 +77,7 @@ export default function ListDoorLock() {
         <div className="content_modal_crs_home">
           <p className="name_text_crs_home">name some thing</p>
           <p className="price_crs_home">$454</p>
-          <button className="btn_see_more">Quick view</button>
+          <button className="btn_main btn_see_more">Quick view</button>
         </div>
       </div>
     </div>

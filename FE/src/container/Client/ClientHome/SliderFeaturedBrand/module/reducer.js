@@ -1,7 +1,7 @@
 import { LIST_CATEGORY_REQUEST, LIST_CATEGORY_SUCCESS, LIST_CATEGORY_FAIL } from "./type";
 
 const initialState = {
-    dataCategory: null,
+    dataCategory: [],
     loadding: false,
     error: null
 }

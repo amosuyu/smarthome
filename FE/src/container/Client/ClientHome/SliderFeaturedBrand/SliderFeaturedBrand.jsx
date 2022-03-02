@@ -7,7 +7,7 @@ import { actListCategory } from "./module/action";
 import { useDispatch } from "react-redux";
 
 export default function SliderFeaturedBrand() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -56,7 +56,7 @@ export default function SliderFeaturedBrand() {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -74,9 +74,8 @@ export default function SliderFeaturedBrand() {
   };
 
   useEffect(() => {
-    dispatch(actListCategory())
-  }, [])
-  
+    dispatch(actListCategory());
+  }, []);
 
   return (
     <div>
@@ -99,7 +98,7 @@ export default function SliderFeaturedBrand() {
             <div className="content_modal_crs_home">
               <p className="name_text_crs_home">name some thing</p>
               <p className="price_crs_home">$454</p>
-              <button className="btn_see_more">Quick view</button>
+              <button className="btn_main btn_chose">Chose option</button>
             </div>
           </div>
         </div>
@@ -120,7 +119,7 @@ export default function SliderFeaturedBrand() {
             <div className="content_modal_crs_home">
               <p className="name_text_crs_home">name some thing</p>
               <p className="price_crs_home">$454</p>
-              <button className="btn_see_more">Quick view</button>
+              <button className="btn_main btn_chose">Chose option</button>
             </div>
           </div>
         </div>
@@ -141,7 +140,7 @@ export default function SliderFeaturedBrand() {
             <div className="content_modal_crs_home">
               <p className="name_text_crs_home">name some thing</p>
               <p className="price_crs_home">$454</p>
-              <button className="btn_see_more">Quick view</button>
+              <button className="btn_main btn_chose">Chose option</button>
             </div>
           </div>
         </div>
