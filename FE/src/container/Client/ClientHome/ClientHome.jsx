@@ -1,10 +1,11 @@
 import React from "react";
-import SliderHome from "./SliderHome/SliderHome";
+import HeroSlider from "./Slide/HeroSlider";
+
 
 export default function ClientHome() {
   return (
     <div>
-      <SliderHome />
+      <HeroSlider />
     </div>
   );
 }

@@ -21,6 +21,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
+    "scroll-swipe": "^0.0.18",
     "swiper": "^8.0.6",
     "web-vitals": "^2.1.4"
   },
