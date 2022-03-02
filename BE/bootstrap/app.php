@@ -60,7 +60,9 @@ $app->singleton(
 */
 
 $app->configure('auth');
-
+// header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Methods: *');
+// header('Access-Control-Allow-Headers: *');
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -78,6 +80,7 @@ $app->configure('auth');
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+    'cors' => \App\Http\Middleware\Cors::class, 
 ]);
 
 /*
