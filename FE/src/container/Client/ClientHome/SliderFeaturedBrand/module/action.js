@@ -17,7 +17,7 @@ const actListCategoryFail = (error) => ({
 export const actListCategory = () => {
     return (dispatch) => {
         dispatch(actListCategoryRequest())
-        clientApi.category().then(res => {
+        clientApi.product().then(res => {
             dispatch(actListCategorySuccess(res.data))
         }).catch(err => {
             dispatch(actListCategoryFail(err))

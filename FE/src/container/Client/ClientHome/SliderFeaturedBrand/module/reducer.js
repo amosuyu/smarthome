@@ -1,20 +1,20 @@
 import { LIST_CATEGORY_REQUEST, LIST_CATEGORY_SUCCESS, LIST_CATEGORY_FAIL } from "./type";
 
 const initialState = {
-    dataCategory: [],
+    dataProduct: [],
     loadding: false,
     error: null
 }
 
-export const categoryReducer = (state = initialState, { type, payload }) => {
+export const productReducer = (state = initialState, { type, payload }) => {
     switch (type) {
 
         case LIST_CATEGORY_REQUEST:
             return { ...state, loadding: true }
         case LIST_CATEGORY_SUCCESS:
-            return { ...state, loadding: false, dataCategory: payload }
+            return { ...state, loadding: false, dataProduct: payload }
         case LIST_CATEGORY_FAIL:
-            return { ...state, loadding: false, dataCategory: null, error: payload }
+            return { ...state, loadding: false, dataProduct: null, error: payload }
 
         default:
             return state
