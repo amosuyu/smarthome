@@ -27,6 +27,7 @@ $router->group(['prefix' => 'api','middleware' => ['cors']], function() use ($ro
     $router->get('/products', 'ProductController@index') ;
     $router->get('/products', 'ProductController@index') ;
     $router->get('/products/{id}', 'ProductController@show') ;
+    $router->get('/products/category/{id}', 'ProductController@showbycategory') ;
     $router->post('/products/create', 'ProductController@store') ;
     $router->post('/products/update/{id}', 'ProductController@update') ;
     $router->delete('/products/detele/{id}', 'ProductController@destroy') ;
