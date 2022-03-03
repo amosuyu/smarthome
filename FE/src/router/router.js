@@ -1,4 +1,5 @@
 import ClientHome from "container/Client/ClientHome/ClientHome";
+import FeatureBrandDetail from "container/Client/FeatureBrandDetail/FeatureBrandDetail";
 
 
 export const clientRoutes = [
@@ -6,9 +7,9 @@ export const clientRoutes = [
         index: true,
         element: <ClientHome />
     },
-    // {
-    //     index: false,
-    //     path: "/carousel",
-    //     element: <Carousel />
-    // },
+    {
+        index: false,
+        path: "/feature",
+        element: <FeatureBrandDetail />
+    },
 ]

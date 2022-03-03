@@ -4,10 +4,13 @@ import "./style.scss";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { actListCategory } from "./module/action";
+
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function SliderFeaturedBrand() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { dataCategory, loadding } = useSelector(
     (state) => state.categoryReducer
   );
@@ -80,16 +83,16 @@ export default function SliderFeaturedBrand() {
   }, []);
 
   return (
-    <div>
-      <p> Featured Brand - Insteon </p>
+    <div className="slider_feature_brand">
+      <p className="text_content"> Featured Brand - Insteon </p>
       <Slider {...settings}>
-        {dataCategory.map((item, index) => {
+        {dataCategory?.map((item, index) => {
           const { title, price, photo } = item;
           return (
             <div key={index}>
               <div className="crs_model_home">
                 <div className="img_crs_home">
-                  <img src={photo} alt="..." />
+                  <img src={`http://localhost:8000/images/${photo}`} alt="..." />
                   <div className="hover_img_crs_home">
                     <img
                       src="https://cf.shopee.vn/file/3e42d6c4fe4b3153f9d70d5075e0f3d2"
@@ -100,7 +103,7 @@ export default function SliderFeaturedBrand() {
                 <div className="content_modal_crs_home">
                   <p className="name_text_crs_home">{title}</p>
                   <p className="price_crs_home">{price}</p>
-                  <button className="btn_main btn_chose">Chose option</button>
+                  <button onClick={() => navigate("/feature")} className="btn_main btn_chose">Chose option</button>
                 </div>
               </div>
             </div>
