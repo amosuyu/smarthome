@@ -8,7 +8,7 @@ export const clientRoutes = [
         element: <ClientHome />
     },
     {
-        index: false,
+        index: true,
         path: "/feature",
         element: <FeatureBrandDetail />
     },
