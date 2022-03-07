@@ -4,6 +4,7 @@ import ListDoorLock from "./ListDoorLock/ListDoorLock";
 import SliderFeaturedBrand from "./SliderFeaturedBrand/SliderFeaturedBrand";
 import HeroSlider from "./Slide/HeroSlider";
 import OverView from '../ClientHome/OverView/OverView'
+import Contact from "../Contact/Contact";
 
 export default function ClientHome() {
   return (
@@ -13,6 +14,8 @@ export default function ClientHome() {
       <HeroSlider />
       <SliderFeaturedBrand />
       <OverView  />
+      <Contact />
+      
     </div>
   );
 }
