@@ -5,7 +5,7 @@ import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="h-auto bg-[#1e2d7d]">
+    <div className="h-auto bg-[#1e2d7d] mt-24">
     <div className="flex justify-between w-full items-center p-3  text-white  text-base md:justify-around md:gap-10
      ">
       <div className="flex flex-col md:text-lg">
