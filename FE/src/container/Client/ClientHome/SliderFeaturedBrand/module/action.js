@@ -14,7 +14,7 @@ const actListCategoryFail = (error) => ({
     type: LIST_CATEGORY_FAIL
 })
 
-export const actListCategory = () => {
+export const actListProducts = () => {
     return (dispatch) => {
         dispatch(actListCategoryRequest())
         clientApi.product().then(res => {
