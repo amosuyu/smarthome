@@ -7,10 +7,12 @@ import img1 from "assets/2472divbig.jpg";
 import img2 from "assets/2472dlalbig_1.jpg";
 import img3 from "assets/outlet_dimmer.jpg";
 import img4 from "assets/vai-pdp-msi.jpg";
+//zoom image
+import ReactImageMagnify from "react-image-magnify";
 
 export default function FeatureBrandDetail() {
   const location = useLocation();
-  const { description, photo, price, title } = location.state;
+  const { description, price, title } = location.state;
   const [imgShow, setImgShow] = useState(
     "http://localhost:3000/static/media/2472divbig.791c2e6efcffe540ff69.jpg"
   );
@@ -60,8 +62,21 @@ export default function FeatureBrandDetail() {
                       alt="..."
                     />
                   </div>
-                  <div className="mt-0 w-2/3">
-                    <img className="w-96" src={imgShow} alt="..." />
+                  <div className="mt-0 w-96">
+                    <ReactImageMagnify
+                      {...{
+                        smallImage: {
+                          alt: "Wristwatch by Ted Baker London",
+                          isFluidWidth: true,
+                          src: imgShow,
+                        },
+                        largeImage: {
+                          src: imgShow,
+                          width: 1000,
+                          height: 1000,
+                        },
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -78,21 +93,31 @@ export default function FeatureBrandDetail() {
                 <hr />
                 <div>
                   <div>
-                    <span>Price:</span> <span className="ml-9">{price}</span>
+                    <span className="text-[#1e2d7d] font-medium">Price:</span>{" "}
+                    <span className="ml-9 text-[#00badb] text-2xl">
+                      {price} VND
+                    </span>
                   </div>
                   <div className="mt-4">
-                    <span>Quantity</span>
+                    <span className="text-[#1e2d7d] font-medium">Quantity</span>
                     <select className="w-16 h-8 border-[#00badb] border-2 rounded ml-3">
                       {(() => {
                         const options = [];
                         for (let i = 1; i <= 10; i++) {
-                          options.push(<option key={i} value={i}>{i}</option>);
+                          options.push(
+                            <option key={i} value={i}>
+                              {i}
+                            </option>
+                          );
                         }
                         return options;
                       })()}
                     </select>
                   </div>
                 </div>
+                <button className="ease-linear	duration-300 bg-[#fa9405] mt-8 h-12 text-white w-6/12 hover:bg-[rgba(250,148,5,.8)]">
+                  Add to card
+                </button>
               </div>
             </dl>
           </div>
