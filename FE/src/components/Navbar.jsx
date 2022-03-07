@@ -49,8 +49,9 @@ const Navbar = () => {
     (state) => state.categoryReducer
   );
 
-  const showMenu = () => {
+  const show = () => {
     setOpen(!open);
+    console.log(open);
   };
   return (
     <div className="">
@@ -59,16 +60,16 @@ const Navbar = () => {
           {!open ? (
             <AiOutlineMenu
               className="text-[#1e2d7d] text-2xl md:pl-3 md:text-4xl md:cursor-pointer  "
-              onClick={showMenu}
+              onClick={show}
             />
           ) : (
             <AiOutlineClose
               className="text-[#1e2d7d] text-2xl md:pl-3 md:text-4xl md:cursor-pointer"
-              onClick={showMenu}
+              onClick={show}
             />
           )}
           {open && (
-            <div className=" absolute top-16 bg-white w-full left-0  h-auto md:hidden   md:w-1/4 md:left-0 md:z-100 md:h-full    ">
+            <div className=" absolute top-16 bg-white w-full left-0  h-auto md:static   md:w-1/4 md:left-0 md:z-100 md:h-full    ">
               {nav.map((item, index) => (
                 <ul
                   className=" w-full flex p-0 justify-center items-center h-full  md:w-full md:text-center md:boder-r-2   "
@@ -107,26 +108,59 @@ const Navbar = () => {
         <div className="w-[150px] h-[22px] md:w-[255px] md:h-[38px] md:items-center md:justify-center">
           <img src={logo} alt="" className="object-cover" />
         </div>
-        <div className="hidden md:block md:flex md:gap-10 md:pr-5 ">
-          <AiOutlineSearch className="text-xl  md:text-3xl md:cursor-pointer  " />
+        <div className="hidden md:block md:flex md:gap-10 md:pr-5  ">
+        {
+          open ? (
+            // <button>
+            //   <AiOutlineSearch
+            //     className="text-xl  md:text-3xl md:cursor-pointer  "
+            //     onClick={show}
+            //   />
+            // </button>
+            <input type="text" id="search" className="outline-blue-500 border-blue-400 border-2 w-[400px] rounded-md" />
+          ) : (
+            <button>
+            <AiOutlineSearch
+              className="text-xl  md:text-3xl md:cursor-pointer  "
+              onClick={show}
+            />
+          </button>
+          )
+        }
+        {
+           open && (
+             <label htmlFor="search">
+            <AiOutlineSearch
+            className="text-xl  md:text-3xl md:cursor-pointer  "
+            onClick={show}
+          />
+          </label>
+           )
+        }
+            
+     
+     
           <Link to="/login">
-            <AiOutlineUser className="text-2xl  md:hover:shadow-lg md:text-3xl" />
+            <AiOutlineUser className="text-2xl   md:text-3xl" />
           </Link>
           <Link to="/cart">
-            <AiOutlineShoppingCart className="text-2xl  md:hover:shadow-lg md:text-3xl" />
+            <AiOutlineShoppingCart className="text-2xl   md:text-3xl" />
           </Link>
         </div>
       </div>
       <div className=" hidden  md:flex md:justify-center md:items-center md:gap-6 ">
-      {categoryList?.map((item, index) => (
-        
+        {categoryList?.map((item, index) => (
           <ul className="flex" key={index}>
             <li className="">
-              <Link to="/" className=" text-black opacity-70 font-semibold hover:no-underline text-base text-[#1e2d7d]">{item.title}</Link>
+              <Link
+                to="/"
+                className=" text-black opacity-70 font-semibold hover:no-underline text-base text-[#1e2d7d] uppercase"
+              >
+                {item.title}
+              </Link>
             </li>
           </ul>
-        
-      ))}
+        ))}
       </div>
     </div>
   );

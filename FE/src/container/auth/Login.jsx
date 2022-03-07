@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div className="container">
+    <div className="container mb-10">
       <form>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -22,7 +22,7 @@ export default function Login() {
             id="exampleInputPassword1"
           />
         </div>
-        <div className="d-flex justify-content-between">
+        <div className="flex justify-content-between">
           <button type="submit" className="btn btn-primary">
             Submit
           </button>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import {IoMdArrowDropup, IoMdArrowDropdown} from 'react-icons/io'
 //scss
 import "./style.scss";
 //img from assests
@@ -25,13 +26,27 @@ export default function FeatureBrandDetail() {
       }
     });
   };
+  const [valueText, setValueText] =  useState(1)
+
+  const changeValueText = (event) => {
+    setValueText(event.target.value)
+  }
+
+  const handleChangeUp = () => {
+    setValueText (valueText + 1)
+  }
+  const handleChangeDown = () => {
+   if (valueText >= 2) {
+    setValueText (valueText - 1 )
+  }
+   }
 
   return (
     <div>
       <div className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mt-10">
-            <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+            <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
               <div className="border-2 p-7">
                 <div className="space-y-5 flex align-top justify-between">
                   <div className="w-1/3 m-0">
@@ -78,23 +93,31 @@ export default function FeatureBrandDetail() {
                 <hr />
                 <div>
                   <div>
-                    <span>Price:</span> <span className="ml-9">{price}</span>
+                    <span className="font-bold text-[#1e2d7d] underline">Price:</span> <span className="ml-9 text-red-500 text-2xl">{price} $</span>
                   </div>
-                  <div className="mt-4">
-                    <span>Quantity</span>
-                    <select className="w-16 h-8 border-[#00badb] border-2 rounded ml-3">
-                      {(() => {
-                        const options = [];
-                        for (let i = 1; i <= 10; i++) {
-                          options.push(<option key={i} value={i}>{i}</option>);
-                        }
-                        return options;
-                      })()}
-                    </select>
+                  <div className="mt-4 ">
+                    <span className="font-bold text-[#1e2d7d] underline">Quantity</span>
+                   <div className="flex justify-start items-center gap-6">
+                     <div>
+                       <input type="text" value={valueText} onChange={changeValueText} className="outline-blue-500 w-[5rem]" />
+                     </div>
+                     <div className="flex flex-col gap-4">
+                        <IoMdArrowDropup className="text-lg" onClick={handleChangeUp} />
+                        <IoMdArrowDropdown className="text-lg" onClick={handleChangeDown}  />
+                     </div>
+                   </div>
+                    <div className="mt-3">
+                      <span className="font-bold text-[#1e2d7d] underline">Description</span>
+                        <p className="font-light font-">{description}</p>
+                    </div>
+                    <div>
+              <button className="bg-orange-500 py-2 px-5 translate-x-12 rounded-xl text-white hover:bg-orange-400 md:translate-x-32 mt-7">Click Buy</button>
+            </div>
                   </div>
                 </div>
               </div>
-            </dl>
+            </div>
+           
           </div>
         </div>
       </div>
