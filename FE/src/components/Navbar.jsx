@@ -55,7 +55,7 @@ const Navbar = () => {
   };
   return (
     <div className="">
-      <div className="h-16 flex justify-start gap-7 z-[100]  md:justify-between md:gap-14 items-center border-b-2 px-2 w-[400px] md:w-full  sticky">
+      <div className="h-16 flex justify-start gap-7 z-[100]  md:justify-between md:gap-5 items-center border-b-2 px-2 min-w-[375px] max-w-[780px] md:min-w-[780px] md:max-w-[1600px]  sticky">
         <div className=" block text-[25px] md:hidden">
           {!open ? (
             <AiOutlineMenu
@@ -69,7 +69,7 @@ const Navbar = () => {
             />
           )}
           {open && (
-            <div className=" absolute top-16 bg-white w-full left-0  h-auto md:static   md:w-1/4 md:left-0 md:z-100 md:h-full    ">
+            <div className=" absolute top-16 bg-white w-full left-0  h-auto     ">
               {nav.map((item, index) => (
                 <ul
                   className=" w-full flex p-0 justify-center items-center h-full  md:w-full md:text-center md:boder-r-2   "
@@ -105,10 +105,10 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <div className="w-[150px] h-[22px] md:w-[255px] md:h-[38px] md:items-center md:justify-center">
+        <div className="w-[150px] h-[22px] md:ml-28 md:w-[255px] md:h-[38px] md:items-center md:justify-center">
           <img src={logo} alt="" className="object-cover" />
         </div>
-        <div className="hidden md:block md:flex md:gap-10 md:pr-5  ">
+        <div className="hidden md:block md:flex md:gap-10 md:pr-28  ">
         {
           open ? (
             // <button>
@@ -117,7 +117,7 @@ const Navbar = () => {
             //     onClick={show}
             //   />
             // </button>
-            <input type="text" id="search" className="outline-blue-500 border-blue-400 border-2 w-[400px] rounded-md" />
+            <input type="text" id="search" className="outline-blue-500 border-blue-400 border-2 w-[300px] px-3 rounded-md" />
           ) : (
             <button>
             <AiOutlineSearch

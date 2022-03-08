@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import {IoMdArrowDropup, IoMdArrowDropdown} from 'react-icons/io'
+import {BsPlus } from 'react-icons/bs'
+import {BiMinus } from 'react-icons/bi'
 //scss
 import "./style.scss";
 //img from assests
@@ -48,35 +49,35 @@ export default function FeatureBrandDetail() {
           <div className="mt-10">
             <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
               <div className="border-2 p-7">
-                <div className="space-y-5 flex align-top justify-between">
-                  <div className="w-1/3 m-0">
+                <div className="space-y-5 flex items-center align-top justify-between">
+                  <div className="w-1/3 flex-col   m-0">
                     <img
                       onClick={onChangeImg}
                       src={img1}
-                      className="border_img w-16 img_style_border"
+                      className="border_img py-4  my-8 w-16 img_style_border"
                       alt="..."
                     />
                     <img
-                      className="border_img w-16"
+                      className="border_img py-4 my-8 w-16"
                       onClick={onChangeImg}
                       src={img2}
                       alt="..."
                     />
                     <img
-                      className="border_img w-16"
+                      className="border_img py-4 my-8 w-16"
                       onClick={onChangeImg}
                       src={img3}
                       alt="..."
                     />
                     <img
-                      className="border_img w-16"
+                      className="border_img py-4 my-8 w-16"
                       onClick={onChangeImg}
                       src={img4}
                       alt="..."
                     />
                   </div>
-                  <div className="mt-0 w-2/3">
-                    <img className="w-96" src={imgShow} alt="..." />
+                  <div className=" w-2/3">
+                    <img className="w-full" src={imgShow} alt="..." />
                   </div>
                 </div>
               </div>
@@ -93,26 +94,28 @@ export default function FeatureBrandDetail() {
                 <hr />
                 <div>
                   <div>
-                    <span className="font-bold text-[#1e2d7d] underline">Price:</span> <span className="ml-9 text-red-500 text-2xl">{price} $</span>
+                    <span className="font-bold text-[#1e2d7d] uppercase ">Price :</span> <span className="ml-9 text-red-500 text-2xl font-bold">{price} $</span>
                   </div>
-                  <div className="mt-4 ">
-                    <span className="font-bold text-[#1e2d7d] underline">Quantity</span>
-                   <div className="flex justify-start items-center gap-6">
+                  <div className="mt-16 ">
+                   <div className="flex flex-col items-start gap-5  md:gap-10  md:flex md:flex-row md:items-center  ">
+                    <span className="font-bold text-[#1e2d7d] uppercase ">Quantity : </span>
+                    
+                     <div className="flex  gap-4 border-[1px] border-black opacity-50 items-center h-11 px-2 ">
+                        <BsPlus className="text-lg" onClick={handleChangeUp} />
+                        <div>
+                       <input type="text" value={valueText} onChange={changeValueText} className="  w-6 box-border text-center" />
+                     </div>
+                        <BiMinus className="text-lg" onClick={handleChangeDown}  />
+                     </div>
                      <div>
-                       <input type="text" value={valueText} onChange={changeValueText} className="outline-blue-500 w-[5rem]" />
-                     </div>
-                     <div className="flex flex-col gap-4">
-                        <IoMdArrowDropup className="text-lg" onClick={handleChangeUp} />
-                        <IoMdArrowDropdown className="text-lg" onClick={handleChangeDown}  />
-                     </div>
-                   </div>
-                    <div className="mt-3">
-                      <span className="font-bold text-[#1e2d7d] underline">Description</span>
-                        <p className="font-light font-">{description}</p>
-                    </div>
-                    <div>
-              <button className="bg-orange-500 py-2 px-5 translate-x-12 rounded-xl text-white hover:bg-orange-400 md:translate-x-32 mt-7">Click Buy</button>
+              <button className="bg-orange-500 py-2 px-5  text-white hover:bg-orange-400 ">Click Buy</button>
             </div>
+                   </div>
+                    <div className=" mt-5">
+                      <span className="font-bold text-[#1e2d7d] uppercase ">Description :</span>
+                        <p className="font-light text-base mt-4"><li>{description}</li></p>
+                    </div>
+            
                   </div>
                 </div>
               </div>
