@@ -1,4 +1,5 @@
 import React from "react";
+import "./Contact.css"
 class Contact extends React.Component {
     constructor(props) {
         super(props);
@@ -30,8 +31,8 @@ class Contact extends React.Component {
                 <div className="w-full text-center">
                     <h2 className="xl:text-[35px] xl:font-light text-[#333] md:text-[30px] md:font-normal font-sans">Liên hệ chúng tôi</h2>
                 </div>
-                <div className="w-full mt-[20px] flex ">
-                    <div className="w-[60%] bg-[#f5f5f5] px-[20px] py-[30px] rounded-md mr-[20px]"> 
+                <div className="w-full mt-[20px] flex wrap-contact">
+                    <div className="xl:w-[60%] bg-[#f5f5f5] px-[20px] py-[30px] rounded-md mr-[20px] md:w-full form-contact"> 
                         <form method="" action="" onSubmit={this.handleSubmit}>
                             <div className="w-full flex mt-[20px]">
                                 <div className="w-[50%] flex flex-col mr-[20px]">
@@ -40,12 +41,12 @@ class Contact extends React.Component {
                                 </div>
                                 <div className="w-[50%] flex flex-col">   
                                     <label htmlFor="phone" className="text-[18px] font-light text-[#000]">Số điện thoại:</label>
-                                    <input type="text" name="txtPhone" onChange={this.handleChange} className="block w-[100%] px-[10px] py-[10px] border-[1px] border-gray-400 focus:outline-none focus:border-red-500 text-gray-400 text-[18px] font-light"/>
+                                    <input type="text" name="txtPhone" id="phone" onChange={this.handleChange} className="block w-[100%] px-[10px] py-[10px] border-[1px] border-gray-400 focus:outline-none focus:border-red-500 text-gray-400 text-[18px] font-light"/>
                                 </div>
                             </div>
                                 <div className="flex flex-col mt-[20px]">
                                     <label htmlFor="email" className="text-[18px] font-light text-[#000]">Email:</label>
-                                    <input type="email" name="txtEmail" onChange={this.handleChange} className="block w-[100%] px-[10px] py-[10px] border-[1px] border-gray-400 focus:outline-none focus:border-red-500 text-gray-400 text-[18px] font-light"/>
+                                    <input type="email" name="txtEmail" id="email" onChange={this.handleChange} className="block w-[100%] px-[10px] py-[10px] border-[1px] border-gray-400 focus:outline-none focus:border-red-500 text-gray-400 text-[18px] font-light"/>
                                 </div>
                                 <div className="flex flex-col mt-[20px]">
                                     <label htmlFor="content" className="text-[18px] font-light text-[#000]">Nội dung:</label>
@@ -57,8 +58,8 @@ class Contact extends React.Component {
                             
                         </form>
                     </div>
-                    <div className="w-[40%] ">
-                        <div className="w-full bg-[#f5f5f5] px-[20px] py-[30px] rounded-md">
+                    <div className="xl:w-[40%] md:w-full ">
+                        <div className="w-full bg-[#f5f5f5] px-[20px] py-[30px] rounded-md location-contact">
                             <div>
                                 <h4 className="text-[18px] font-medium">Địa chỉ:</h4>
                                 <p className="text-[18px] font-normal"><i className="fa-solid fa-location-dot text-[#333]"></i><strong className="text-[#999] font-medium"> Địa chỉ: </strong> 29/7 Hoàng Diệu, phường 10, Quận Phú Nhuận, Tp.Hồ Chí Minh</p>

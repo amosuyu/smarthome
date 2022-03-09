@@ -1,0 +1,60 @@
+.slick-arrow{
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(235, 235, 235);
+    border-radius:50%;
+    border:1px solid black;
+}
+.slick-arrow:hover {
+    background:rgb(206, 206, 206) !important;
+}
+
+.slick-arrow::before{
+    font-family: "fontAwesome" !important;
+    color:#111;
+}
+
+.slick-prev::before {
+    content: "\f0d9" !important;
+}
+.slick-prev:hover {
+    background: rgb(206, 206, 206) !important;
+    color: #333 !important;
+}
+.slick-prev:focus {
+    background: rgb(206, 206, 206) !important;
+    color: #333 !important;
+}
+.slick-next::before {
+    content: "\f0da" !important;
+}
+
+.slick-next:hover {
+    background: rgb(206, 206, 206) !important;
+    color: black !important;
+}
+
+.slick-next:focus {
+    background: rgb(206, 206, 206) !important;
+    color: black !important;
+}
+
+@media screen and (max-width:451px) {
+    .wrap-title-blog {
+        position: absolute;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100%;
+        max-height: 50%;
+        background-color:rgba(54, 54, 54, 0.603);
+    }
+    .title-blog {
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .title-small{
+        font-size: 14px;
+        font-weight: 400;
+    }
+}

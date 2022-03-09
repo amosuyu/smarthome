@@ -1,0 +1,14 @@
+@media screen and (max-width:451px) {
+    .wrap-contact{
+        display: flex;
+        flex-direction: column;
+    }
+    .form-contact {
+        width: 100%;
+        border-bottom: 1px solid #000;
+        border-radius: 0;
+    }
+    .location-contact{
+        border-radius:0;
+    }
+}

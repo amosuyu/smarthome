@@ -5,6 +5,8 @@ import SliderFeaturedBrand from "./SliderFeaturedBrand/SliderFeaturedBrand";
 import HeroSlider from "./Slide/HeroSlider";
 import OverView from '../ClientHome/OverView/OverView'
 import Contact from "../Contact/Contact";
+import Blog from "../ClientBlog/Blog";
+import BlogPage from "../ClientBlogPage/BlogPage";
 
 export default function ClientHome() {
   return (
@@ -12,10 +14,11 @@ export default function ClientHome() {
       {/* <Breadcrumb /> */}
       {/* <ListDoorLock /> */}
       <HeroSlider />
-      <SliderFeaturedBrand />
+      {/* <SliderFeaturedBrand />
       <OverView  />
       <Contact />
-      
+      <Blog /> */}
+      <BlogPage />
     </div>
   );
 }
