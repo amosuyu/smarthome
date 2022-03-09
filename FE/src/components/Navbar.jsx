@@ -55,7 +55,7 @@ const Navbar = () => {
   };
   return (
     <div className="">
-      <div className="h-16 flex justify-start gap-7 z-[100]  md:justify-between md:gap-5 items-center border-b-2 px-2 min-w-[375px] max-w-[780px] md:min-w-[780px] md:max-w-[1600px]  sticky">
+      <div className="h-16 flex justify-start gap-7 z-[100]  md:justify-between md:gap-5 items-center border-b-2 px-2 min-w-[375px] max-w-[780px] md:min-w-[780px] md:max-w-[1800px]  sticky">
         <div className=" block text-[25px] md:hidden">
           {!open ? (
             <AiOutlineMenu

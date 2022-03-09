@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import {BsPlus } from 'react-icons/bs'
-import {BiMinus } from 'react-icons/bi'
+import { BsPlus, BsPatchCheckFill } from "react-icons/bs";
+import { BiMinus } from "react-icons/bi";
 //scss
 import "./style.scss";
 //img from assests
@@ -27,20 +27,20 @@ export default function FeatureBrandDetail() {
       }
     });
   };
-  const [valueText, setValueText] =  useState(1)
+  const [valueText, setValueText] = useState(1);
 
   const changeValueText = (event) => {
-    setValueText(event.target.value)
-  }
+    setValueText(event.target.value);
+  };
 
   const handleChangeUp = () => {
-    setValueText (valueText + 1)
-  }
+    setValueText(valueText + 1);
+  };
   const handleChangeDown = () => {
-   if (valueText >= 2) {
-    setValueText (valueText - 1 )
-  }
-   }
+    if (valueText >= 2) {
+      setValueText(valueText - 1);
+    }
+  };
 
   return (
     <div>
@@ -94,34 +94,120 @@ export default function FeatureBrandDetail() {
                 <hr />
                 <div>
                   <div>
-                    <span className="font-bold text-[#1e2d7d] uppercase ">Price :</span> <span className="ml-9 text-red-500 text-2xl font-bold">{price} $</span>
+                    <span className="font-bold text-[#1e2d7d] uppercase ">
+                      Price :
+                    </span>{" "}
+                    <span className="ml-9 text-red-500 text-2xl font-bold">
+                      {price} $
+                    </span>
                   </div>
                   <div className="mt-16 ">
-                   <div className="flex flex-col items-start gap-5  md:gap-10  md:flex md:flex-row md:items-center  ">
-                    <span className="font-bold text-[#1e2d7d] uppercase ">Quantity : </span>
-                    
-                     <div className="flex  gap-4 border-[1px] border-black opacity-50 items-center h-11 px-2 ">
+                    <div className="flex flex-col items-start gap-5  md:gap-10  md:flex md:flex-row md:items-center  ">
+                      <span className="font-bold text-[#1e2d7d] uppercase ">
+                        Quantity :{" "}
+                      </span>
+
+                      <div className="flex  gap-4 border-[1px] border-black opacity-50 items-center h-11 px-2 ">
                         <BsPlus className="text-lg" onClick={handleChangeUp} />
                         <div>
-                       <input type="text" value={valueText} onChange={changeValueText} className="  w-6 box-border text-center" />
-                     </div>
-                        <BiMinus className="text-lg" onClick={handleChangeDown}  />
-                     </div>
-                     <div>
-              <button className="bg-orange-500 py-2 px-5  text-white hover:bg-orange-400 ">Click Buy</button>
-            </div>
-                   </div>
-                    <div className=" mt-5">
-                      <span className="font-bold text-[#1e2d7d] uppercase ">Description :</span>
-                        <p className="font-light text-base mt-4"><li>{description}</li></p>
+                          <input
+                            type="text"
+                            value={valueText}
+                            onChange={changeValueText}
+                            className="  w-6 box-border text-center"
+                          />
+                        </div>
+                        <BiMinus
+                          className="text-lg"
+                          onClick={handleChangeDown}
+                        />
+                      </div>
+                      <div>
+                        <button className="bg-orange-500 py-2 px-5  text-white hover:bg-orange-400 ">
+                          Click Buy
+                        </button>
+                      </div>
                     </div>
-            
+                    <div className=" mt-5">
+                      <span className="font-bold text-[#1e2d7d] uppercase ">
+                        Description :
+                      </span>
+                      <p className="font-light text-base mt-4">
+                        <li>{description}</li>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-           
           </div>
+        </div>
+      </div>
+      <div className=" bg-white px-4 py-3 md:w-1/2 mx-auto">
+        <div className="border-2 mx-auto px-4 pb-4  ">
+          <div className=" mt-3">
+            <h5 className="text-[#1e2d7d] font-medium">Đánh giá sản phẩm Nest x Yale Lock with Nest </h5>
+          </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50     ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50   ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50   ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50   ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
         </div>
       </div>
     </div>

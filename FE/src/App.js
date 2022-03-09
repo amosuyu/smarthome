@@ -29,7 +29,7 @@ function App() {
           </Route>
           <Route path="*" element={<h1>page not found</h1>} />
         </Routes>
-      </Router>,
+      </Router>
     </>
   );
 }
