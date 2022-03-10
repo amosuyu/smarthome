@@ -6,6 +6,7 @@ import HeroSlider from "./Slide/HeroSlider";
 // import OverView from '../ClientHome/OverView/OverView'
 // import FeatureBrandDetail from '../FeatureBrandDetail/FeatureBrandDetail'
 import Blog from "./Blog/Blog";
+import ProductInCart from "../Cart/ProductInCart";
 
 export default function ClientHome() {
   return (

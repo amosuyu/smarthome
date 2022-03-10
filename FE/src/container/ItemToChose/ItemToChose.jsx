@@ -1,29 +1,31 @@
-import React, { useState } from "react";
-import "./style.scss";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import './style.scss'
+import { AiFillDelete } from "react-icons/ai";
 
-import { BsPlus } from "react-icons/bs";
-import { BiMinus } from "react-icons/bi";
+import {
+  actRemoveProduct,
+} from "container/Client/saveProductToBuyReducer/reducer";
 
-export default function ItemToChose({ activeModel }) {
-  const [price, setprice] = useState();
+export default function ItemToChose({ item }) {
+  const { photo, price, id } = item;
+  const dispatch = useDispatch();
+
   return (
-    <div
-      className={`item_to_chose ease-linear duration-75 ${
-        activeModel && "activeModelItemBuy"
-      }`}
-    >
-      <div>
-        <div>
-          <img src="http://localhost:8000/images/16461297231.jpg" alt="ma" />
+    <>
+      <div className="flex items-center justify-between min-w-[13rem] py-2 border-b-2">
+        <div className="w-10">
+          <img src={`http://localhost:8000/images/${photo}`} alt="ma" />
         </div>
-        <div>
-          <BsPlus />
-          <div>
-            <input type="number" defaultValue={price} />
-          </div>
-          <BiMinus />
+        <div className="flex items-center">
+          <input className="w-10 text-center" type="number" value="1" />
         </div>
+        <div>{price}$</div>
+        <AiFillDelete
+          title="remove"
+          onClick={() => dispatch(actRemoveProduct(id))}
+        />
       </div>
-    </div>
+    </>
   );
 }

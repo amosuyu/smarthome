@@ -1,4 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+import "./style.scss";
+
 import {
   AiOutlineMenu,
   AiOutlineSearch,
@@ -10,14 +15,12 @@ import {
   AiOutlineClose,
   AiFillTwitterCircle,
 } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 import logo from "assets/logo.png";
-import { useDispatch, useSelector } from "react-redux";
-import { actListCategory } from "./module/action";
 import ListItemSearch from "container/ListItemSearch/ListItemSearch";
-import { actListProducts } from "container/Client/ClientHome/SliderFeaturedBrand/module/action";
 import ItemToChose from "container/ItemToChose/ItemToChose";
+import { actListCategory } from "./module/action";
+import { actListProducts } from "container/Client/ClientHome/SliderFeaturedBrand/module/action";
 
 const nav = [
   {
@@ -54,6 +57,8 @@ const Navbar = () => {
     (state) => state.categoryReducer
   );
 
+  const { productToBuyReducer } = useSelector((state) => state);
+
   const show = () => {
     setOpen(!open);
   };
@@ -78,7 +83,7 @@ const Navbar = () => {
   });
   return (
     <>
-      <div className="h-16 flex justify-start gap-7 z-[100]  md:justify-between md:gap-5 items-center border-b-2 px-2 min-w-[375px] max-w-[780px] md:min-w-[780px] md:max-w-[1600px] sticky">
+      <div className="h-16 flex justify-start gap-7 z-[100]  md:justify-between md:gap-5 items-center border-b-2 px-2 min-w-[375px] max-w-[780px] md:min-w-[780px] md:max-w-[1800px]  sticky">
         <div className=" block text-[25px] md:hidden">
           {!open ? (
             <AiOutlineMenu
@@ -161,15 +166,19 @@ const Navbar = () => {
           <Link to="/login">
             <AiOutlineUser className="text-2xl   md:text-3xl" />
           </Link>
-          <div
-            className="text-[#007bff] cursor-pointer hover:text-[#0056b3] relative"
-            onClick={() => setActiveModel(!activeModel)}
-          >
-            <AiOutlineShoppingCart className="text-2xl   md:text-3xl" />
+          <div className="text-[#007bff] cursor-pointer hover:text-[#0056b3] relative store_hover_show">
+            <AiOutlineShoppingCart
+              className="text-2xl md:text-3xl"
+              onClick={() => setActiveModel(!activeModel)}
+            />
             <div className="w-5 h-5 rounded-2xl bg-[#00badb] absolute text-white text-center leading-[18px] inset-[0] inset-x-[15px] hover:w-6 hover:h-6 hover:leading-[20px] ease-linear duration-75">
-              0
+              {productToBuyReducer?.length}
             </div>
-            <ItemToChose activeModel={activeModel} />
+            <div className="item_to_chose">
+              {productToBuyReducer.map((item, index) => {
+                return <ItemToChose item={item} key={index} index={index} />;
+              })}
+            </div>
           </div>
         </div>
       </div>

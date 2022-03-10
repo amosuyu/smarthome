@@ -20,6 +20,9 @@ const Footer = () => {
           <Link to="/contact" className="text-white uppercase md:pt-4">
             Contact
           </Link>
+          <Link to="/cart" className="text-white uppercase md:pt-4">
+            Cart
+          </Link>
           <Link to="/blog" className="text-white uppercase md:pt-4">
             Blog
           </Link>

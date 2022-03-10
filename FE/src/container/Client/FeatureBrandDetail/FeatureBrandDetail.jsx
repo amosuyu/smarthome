@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { BsPlus } from "react-icons/bs";
+import { BsPlus, BsPatchCheckFill } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
 //scss
 import "./style.scss";
@@ -9,8 +10,10 @@ import img1 from "assets/2472divbig.jpg";
 import img2 from "assets/2472dlalbig_1.jpg";
 import img3 from "assets/outlet_dimmer.jpg";
 import img4 from "assets/vai-pdp-msi.jpg";
+import { actSaveProduct } from "../saveProductToBuyReducer/reducer";
 
 export default function FeatureBrandDetail() {
+  const dispatch =  useDispatch()
   const location = useLocation();
   const { description, price, title } = location.state;
   const [imgShow, setImgShow] = useState(
@@ -27,19 +30,19 @@ export default function FeatureBrandDetail() {
       }
     });
   };
-  const [valueText, setValueText] = useState(1);
+  const [amount, setamount] = useState(1);
 
-  const changeValueText = (event) => {
-    setValueText(event.target.value);
+  const changeamount = (event) => {
+    setamount(event.target.value);
   };
 
   const handleChangeUp = () => {
-    setValueText(valueText + 1);
+    setamount(amount + 1);
   };
   
   const handleChangeDown = () => {
-    if (valueText >= 2) {
-      setValueText(valueText - 1);
+    if (amount >= 2) {
+      setamount(amount - 1);
     }
   };
 
@@ -113,8 +116,8 @@ export default function FeatureBrandDetail() {
                         <div>
                           <input
                             type="text"
-                            value={valueText}
-                            onChange={changeValueText}
+                            value={amount}
+                            onChange={changeamount}
                             className="  w-6 box-border text-center"
                           />
                         </div>
@@ -139,12 +142,83 @@ export default function FeatureBrandDetail() {
                     </div>
                   </div>
                 </div>
-                <button className="ease-linear	duration-300 bg-[#fa9405] mt-8 h-12 text-white w-6/12 hover:bg-[rgba(250,148,5,.8)]">
+                <button 
+                  className="ease-linear	duration-300 bg-[#fa9405] mt-8 h-12 text-white w-6/12 hover:bg-[rgba(250,148,5,.8)]" 
+                  onClick={
+                    () => dispatch(actSaveProduct({...location.state, amount}))
+                }>
                   Add to card
                 </button>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className=" bg-white px-4 py-3 md:w-1/2 mx-auto">
+        <div className="border-2 mx-auto px-4 pb-4  ">
+          <div className=" mt-3">
+            <h5 className="text-[#1e2d7d] font-medium">Đánh giá sản phẩm Nest x Yale Lock with Nest </h5>
+          </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50     ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50   ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50   ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
+          <div className="border-2 mt-2 px-3 pt-2 hover:bg-slate-50   ">
+          <div className="flex items-center gap-4 mb-2 ">
+            <span className="font-semibold  ">Anonymous</span>
+            <div className="flex items-center gap-2">
+                <BsPatchCheckFill className="text-green-400" /> 
+              <span className="text-green-600 italic text-xs">
+              đã mua hàng tại SmartHome
+              </span>
+            </div>
+          </div>
+            <div>
+              <p className="mb-0">Sản phẩm tốt đạt chất lượng</p>
+              <span className="italic text-xs">2 ngày trước</span>
+            </div>
+            </div>
         </div>
       </div>
     </div>

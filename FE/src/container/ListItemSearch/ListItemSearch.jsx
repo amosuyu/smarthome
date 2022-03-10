@@ -49,7 +49,7 @@ export default function ListItemSearch({
           </div>
         );
       })}
-      {newDataProduct.length == 0 && (
+      {newDataProduct?.length == 0 && (
         <p className="text-center leading-[1.5] m-auto p-[inherit]">
           -- no result--
         </p>

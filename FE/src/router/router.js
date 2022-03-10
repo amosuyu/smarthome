@@ -2,6 +2,9 @@ import Login from "container/auth/Login";
 import ClientHome from "container/Client/ClientHome/ClientHome";
 import FeatureBrandDetail from "container/Client/FeatureBrandDetail/FeatureBrandDetail";
 import SignUp from "container/auth/SingUp";
+import Cart from "container/Client/Cart/Cart";
+
+
 
 
 export const clientRoutes = [
@@ -24,6 +27,12 @@ export const clientRoutes = [
         path : "/signup",
         element : <SignUp />
     },
+    {
+        index :true,
+        path : "/cart",
+        element : <Cart />
+    },
+    
     
 
 ]
