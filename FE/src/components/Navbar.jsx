@@ -51,7 +51,7 @@ const Navbar = () => {
 
   const show = () => {
     setOpen(!open);
-    console.log(open);
+    
   };
   return (
     <div className="">

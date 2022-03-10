@@ -3,7 +3,8 @@ import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const ProductInCart = ({ product, increment, decrement,remove }) => {
   return (
-    <div className="border-2 p-3 my-5  mx-4 w-[90%] h-auto">
+    <div>
+    <div className="border-2  p-3 my-5  mx-4 w-[90%] md:w-full h-auto">
       <div className="flex gap-x-10">
         <div className="flex flex-col w-1/3 justify-around items-center gap-5">
           <img src={product.url} alt="" className=" cover w-full md:w-[50%]" />
@@ -15,7 +16,7 @@ const ProductInCart = ({ product, increment, decrement,remove }) => {
             </span>
             <div className="">
               <label htmlFor="1" className="italic text-sm text-red-400">
-                Chọn các khuyến mãi sau :
+                Chọn 1 trong các khuyến mãi sau :
               </label>
               <br />
               <input type="radio" id="1" value="10%" />
@@ -50,19 +51,22 @@ const ProductInCart = ({ product, increment, decrement,remove }) => {
             <span className="text-red-500 font-bold text-lg">
               {product.price}$
             </span>
-            <div className="flex gap-3 justify-center items-center mt-3 border-2 w-2/3 md:w-1/4 md:justify-around">
-              <AiOutlinePlus onClick={() => increment(product.id)} />
+            <div className="flex gap-3 justify-between px-3 items-center mt-3 border-2 w-2/3 md:w-1/4 md:justify-around">
+              <AiOutlinePlus onClick={() => increment(product.id)} className="cursor-pointer" />
               <input
                 type="text"
                 value={product.quantity}
                 className="w-6 pl-1 box-border "
               />
-              <AiOutlineMinus onClick={() => decrement(product.id)} />
+              <AiOutlineMinus onClick={() => decrement(product.id)} className="cursor-pointer" />
             </div>
           </div>
         </div>
       </div>
     </div>
+    </div>
+   
+    
   );
 };
 export default ProductInCart;

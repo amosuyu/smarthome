@@ -10,7 +10,6 @@ export default function ClientLayOut() {
     <>
       <Header />
       <Navbar />
-  
       <Outlet />
       <Footer />
     </>

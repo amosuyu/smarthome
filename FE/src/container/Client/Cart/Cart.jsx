@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import InfoCustomer from "./InfoCustomer";
+import InfoOrder from "./InfoOrder";
 import ProductInCart from "./ProductInCart";
 
 const data = [
@@ -26,13 +28,10 @@ const data = [
 ];
 const Cart = () => {
   const [listProduct, setListProduct] = useState([]);
-  
 
-  
- 
   useEffect(() => {
     setListProduct(data);
-    console.log(listProduct)
+    console.log(listProduct);
   }, []);
 
   const handleIncrement = (id) => {
@@ -44,7 +43,6 @@ const Cart = () => {
               quantity: product.quantity === 10 ? 10 : product.quantity + 1,
             }
           : product
-         
       )
     );
   };
@@ -61,23 +59,31 @@ const Cart = () => {
     );
   };
   const removeProduct = (id) => {
-      const removeArr = [ ...listProduct].filter(product => product.id !== id);
-      setListProduct(removeArr);
-  }
+    const removeArr = [...listProduct].filter((product) => product.id !== id);
+    setListProduct(removeArr);
+  };
   return (
-    <div>
-        <>
-        {
-            listProduct.map((item, index) => {
-                return (
-                <ProductInCart key={index} product={item} increment={handleIncrement} decrement={handleDecrement} remove={removeProduct} />
-                )
-            })
-        }
-        </>
-    
+    <div className="md:flex md:w-full md:gap-10 md:items-center md:mt-[-80px]">
+      <div className="md:flex md:flex-col md:w-[45%]">
+        {listProduct.map((item, index) => {
+          return (
+            <ProductInCart
+              key={index}
+              product={item}
+              increment={handleIncrement}
+              decrement={handleDecrement}
+              remove={removeProduct}
+            />
+          );
+        })}
+      </div>
+      <div className=" md:flex md:flex-col md:w-[49%] md:items-center md:mt-[120px]   ">
+        <InfoOrder />
+        <InfoCustomer />
+      </div>
     </div>
   );
+ 
 };
 
 export default Cart;

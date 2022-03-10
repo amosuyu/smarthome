@@ -107,7 +107,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/login" variant="body2" className='cursor-pointer'>
+                <Link to="/login" variant="body2" className='cursor-pointer'>
                   Already have an account? Sign in
                 </Link>
               </Grid>
