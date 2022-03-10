@@ -1,0 +1,27 @@
+.store_hover_show {
+    .item_to_chose {
+        position: absolute;
+        right: 0;
+        top: 50px;
+        background-color: whitesmoke;
+        min-height: 0;
+        min-width: 10rem;
+        overflow: hidden;
+        transition: all 0.2s linear;
+        transition-delay: 0.3s;
+        transform: scaleY(0);
+        transform-origin: top;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    &:hover {
+        .item_to_chose {
+            transform: scaleY(1);
+            min-height: 4rem;
+        }
+    }
+}

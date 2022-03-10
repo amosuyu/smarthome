@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { BsPlus, BsPatchCheckFill } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
@@ -9,10 +10,12 @@ import img1 from "assets/2472divbig.jpg";
 import img2 from "assets/2472dlalbig_1.jpg";
 import img3 from "assets/outlet_dimmer.jpg";
 import img4 from "assets/vai-pdp-msi.jpg";
+import { actSaveProduct } from "../saveProductToBuyReducer/reducer";
 
 export default function FeatureBrandDetail() {
+  const dispatch =  useDispatch()
   const location = useLocation();
-  const { description, photo, price, title } = location.state;
+  const { description, price, title } = location.state;
   const [imgShow, setImgShow] = useState(
     "http://localhost:3000/static/media/2472divbig.791c2e6efcffe540ff69.jpg"
   );
@@ -27,18 +30,19 @@ export default function FeatureBrandDetail() {
       }
     });
   };
-  const [valueText, setValueText] = useState(1);
+  const [amount, setamount] = useState(1);
 
-  const changeValueText = (event) => {
-    setValueText(event.target.value);
+  const changeamount = (event) => {
+    setamount(event.target.value);
   };
 
   const handleChangeUp = () => {
-    setValueText(valueText + 1);
+    setamount(amount + 1);
   };
+  
   const handleChangeDown = () => {
-    if (valueText >= 2) {
-      setValueText(valueText - 1);
+    if (amount >= 2) {
+      setamount(amount - 1);
     }
   };
 
@@ -112,8 +116,8 @@ export default function FeatureBrandDetail() {
                         <div>
                           <input
                             type="text"
-                            value={valueText}
-                            onChange={changeValueText}
+                            value={amount}
+                            onChange={changeamount}
                             className="  w-6 box-border text-center"
                           />
                         </div>
@@ -138,6 +142,13 @@ export default function FeatureBrandDetail() {
                     </div>
                   </div>
                 </div>
+                <button 
+                  className="ease-linear	duration-300 bg-[#fa9405] mt-8 h-12 text-white w-6/12 hover:bg-[rgba(250,148,5,.8)]" 
+                  onClick={
+                    () => dispatch(actSaveProduct({...location.state, amount}))
+                }>
+                  Add to card
+                </button>
               </div>
             </div>
           </div>
