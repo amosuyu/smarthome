@@ -14,11 +14,11 @@ export default function ClientHome() {
       {/* <Breadcrumb /> */}
       {/* <ListDoorLock /> */}
       <HeroSlider />
-      {/* <SliderFeaturedBrand />
+      <SliderFeaturedBrand />
       <OverView  />
-      <Contact />
+      {/* <Contact />
       <Blog /> */}
-      <BlogPage />
+      {/* <BlogPage /> */}
     </div>
   );
 }

@@ -3,9 +3,12 @@ const BlogPage = () => {
 
     return ( 
         <>
+        <div className="w-full h-[580px] relative overflow-hidden">
+            <img className="w-full h-[1300px] object-cover absolute top-0 left-0" src="https://www.neolock.vn/upload/images/blog/59e052c8e7993c010af0f98ed91dc0c5.jpg" alt="" />
+        </div>
         <div className="xl:w-[80%] mx-auto">
             <div className="xl:mt-[100px]">
-                <h2 className="xl:text-[40px] xl:font-light font-sans tracking-wide">Giải pháp khóa cửa nhà thông minh với neolock</h2>
+                <h2 className="xl:text-[40px] xl:font-light font-lora tracking-wide">Giải pháp khóa cửa nhà thông minh với neolock</h2>
             </div>
             <div className="xl:flex xl:flex-row xl:mb-[100px]">
                 <div className="xl:w-[100%]">
@@ -24,7 +27,7 @@ const BlogPage = () => {
                 <div className="xl:w-[40%] xl:ml-[100px] xl:mt-[50px]">
                     <div className="xl:w-full xl:h-[50px] relative">
                         <input type="text" className="w-[100%] h-full outline-none px-[10px] py-[5px] border-[#d3d3d3] border-[1px] focus:border-[#df3535]" placeholder="Tìm kiếm từ khóa"/>
-                        <button type="button" className="absolute top-[14px] right-[10px] pr-[10px]"><i class="fas fa-search"></i> </button>
+                        <button type="button" className="absolute top-[14px] right-[10px] pr-[10px]"><i className="fas fa-search"></i> </button>
                     </div>
                     <p className="xl:mt-[100px] xl:text-[20px] xl:font-light">Nổi bật</p>
                     <div className="w-full h-[20px] border-[#e0e0e0] border-b-[1px]"></div>

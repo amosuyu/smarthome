@@ -1,4 +1,6 @@
 import React from "react";
+import Blog from "../ClientBlog/Blog";
+import HeroSlider from "../ClientHome/Slide/HeroSlider";
 import "./Contact.css"
 class Contact extends React.Component {
     constructor(props) {
@@ -27,11 +29,12 @@ class Contact extends React.Component {
     render() {
     return(
         <>
-            <div className="xl:w-[65%] mx-auto mt-[40px] mb-[400px] md:w-[90%]">
+            <HeroSlider />
+            <div className="xl:w-[65%] mx-auto mt-[100px] mb-[100px] md:w-[90%] font-lora">
                 <div className="w-full text-center">
-                    <h2 className="xl:text-[35px] xl:font-light text-[#333] md:text-[30px] md:font-normal font-sans">Liên hệ chúng tôi</h2>
+                    <h2 className="xl:text-[35px] xl:font-light text-[#333] md:text-[30px] md:font-normal font-lora">Liên hệ chúng tôi</h2>
                 </div>
-                <div className="w-full mt-[20px] flex wrap-contact">
+                <div className="w-full mt-[50px] flex wrap-contact">
                     <div className="xl:w-[60%] bg-[#f5f5f5] px-[20px] py-[30px] rounded-md mr-[20px] md:w-full form-contact"> 
                         <form method="" action="" onSubmit={this.handleSubmit}>
                             <div className="w-full flex mt-[20px]">
@@ -53,7 +56,7 @@ class Contact extends React.Component {
                                     <textarea name="txtContent" id="content" cols="30" rows="6" onChange={this.handleChange} placeholder="Viết ghi chú hoặc câu hỏi của bạn ở đây..." className=" px-[10px] py-[10px] border-[1px] border-gray-400 focus:outline-none focus:border-red-500 text-gray-400 text-[18px] font-light"></textarea>
                                 </div>
                                 <div>
-                                    <button type="submit" name="submit" className="w-[70px] h-[40px] bg-red-700 mt-[20px] text-[#fff] text-[18px] font-normal">Gửi</button>
+                                    <button type="submit" name="submit" className="w-[70px] h-[40px] bg-red-700 mt-[20px] text-[#fff] text-[18px] font-normal hover:bg-red-600">Gửi</button>
                                 </div>
                             
                         </form>
@@ -67,16 +70,17 @@ class Contact extends React.Component {
                             </div>
                             <div>
                                 <h4 className="text-[18px] font-medium">Hotline:</h4>
-                                <a href="" className="text-[18px] text-[#d51c25] font-normal hover:no-underline hover:text-[#000]">(+84) 902 978 179 (Miss. Trinh) - 0986 43 5388 (Mr. Cong)</a>
+                                <a href="/" className="text-[18px] text-[#d51c25] font-normal hover:no-underline hover:text-[#000]">(+84) 902 978 179 (Miss. Trinh) - 0986 43 5388 (Mr. Cong)</a>
                             </div>
                             <div className="mt-[20px]">
                                 <h4 className="text-[18px] font-medium ">Email:</h4>
-                                <a href="" className="text-[18px] text-[#d51c25] font-normal hover:no-underline hover:text-[#000]">info@neolock.vn</a>
+                                <a href="/" className="text-[18px] text-[#d51c25] font-normal hover:no-underline hover:text-[#000] ">info@neolock.vn</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
+            <Blog />
         </>
      );
     }

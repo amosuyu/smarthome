@@ -51,7 +51,6 @@ const data = [
 
 const Blog = () => {
     let settings = {
-        dots: true,
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -73,23 +72,25 @@ const Blog = () => {
       };
     return ( 
         <>
-            <div className="w-[90%] mx-auto mb-[20px]">
+            <div className="w-[90%] mx-auto mb-[20px] font-lora">
                 <h2 className="text-[#1e2d7d] text-[25px]">Bài viết</h2>
             </div>
-            <Slider {...settings} className="xl:w-[90%] xl:mx-auto md:w-[100%]" >
+            <Slider {...settings} className="xl:w-[90%] xl:mx-auto md:w-[100%] font-lora " >
                 {data.map(post => (
-                    <Link to="" className="group block w-full h-[300px] relative" key={post.id}>
-                    <div className="xl:w-[99%] h-full xl:border-[#888] xl:border-2 md:w-full">
-                        <img src={post.image} alt="" className="w-full h-full object-cover"/>
-                    </div>
-                    <div className="xl:absolute xl:z-[1000] xl:top-0 xl:left-0 xl:w-[99%] xl:h-full xl:bg-[#444] text-center xl:opacity-0 group-hover:opacity-80 xl:transition-opacity ">
-                        <div className="xl:w-full xl:absolute xl:bottom-1 xl:opacity-1 wrap-title-blog">
-                            <h2><a href="" className="xl:text-[20px] xl:font-medium hover:no-underline text-[#fff] hover:text-[#007aff] title-blog">{post.title.toUpperCase()}</a></h2>
-                            <span className="xl:text-[15px] text-[#eee] text-left title-small">blogs - {post.time}</span>
+                    <div to="" className="group block w-full h-[300px] relative " key={post.id}>
+                        <div className="xl:w-[99%] h-full xl:border-[#dfdfdf] xl:border-2 md:w-full">
+                            <img src={post.image} alt="" className="w-full h-full object-cover"/>
                         </div>
-                        
+                        <Link id="RouterNavLink" to="/blog" className="w-full h-full absolute z-[1010] top-0 left-0">
+                            <div  className="xl:absolute xl:z-[1000] xl:top-0 xl:left-0 xl:w-[99%] xl:h-full xl:bg-[#444] text-center xl:opacity-0 group-hover:opacity-80 xl:transition-opacity ">
+                                <div className="xl:w-full xl:absolute xl:bottom-1 xl:opacity-1 wrap-title-blog">
+                                    <h2 className="xl:text-[20px] xl:font-medium hover:no-underline text-[#fff] hover:text-[#007aff] title-blog transition-all">{post.title.toUpperCase()}</h2>
+                                    <span className="xl:text-[15px] text-[#d4d4d4c9] text-left title-small">blogs - {post.time}</span>
+                                </div>
+                                
+                            </div>
+                        </Link>
                     </div>
-                </Link>
                 ))}
                     
 

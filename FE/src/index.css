@@ -16,7 +16,7 @@ body {
 
 
 @layer base {
-  html {
-    font-family: 'Poppins', sans-serif;
+  body {
+    font-family: 'Lora', sans-serif;
   }
 }
