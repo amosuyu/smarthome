@@ -61,10 +61,6 @@ const Navbar = () => {
 
   const show = () => {
     setOpen(!open);
-<<<<<<< HEAD
-    
-=======
->>>>>>> Cuong
   };
 
   useEffect(() => {
@@ -140,18 +136,18 @@ const Navbar = () => {
         <div className="w-[150px] h-[22px] md:ml-28 md:w-[255px] md:h-[38px] md:items-center md:justify-center">
           <img src={logo} alt="" className="object-cover" />
         </div>
-        <div className="hidden md:flex md:gap-10 md:pr-28 items-center">
+        <div className=" md:flex md:gap-10 md:pr-28 items-center">
           <div className="relative">
-            {open && (
-              <input
-                onDoubleClick={() => setfocus(!focus)}
-                onChange={(e) => sethandleValue(e)}
-                type="text"
-                id="search"
-                className="outline-blue-500 border-blue-400 border-2 w-[300px] px-3 rounded-md h-10"
-                autoFocus
-              />
-            )}
+            <input
+              onClick={() => setfocus(!focus)}
+              onChange={(e) => sethandleValue(e)}
+              type="text"
+              id="search"
+              className="focus:outline-red-500 border-2 w-[300px] px-3 rounded-md h-10"
+              autoFocus
+              placeholder="search"
+            />
+
             <ListItemSearch
               handleValue={handleValue}
               focusFill={focusFill}
@@ -162,7 +158,7 @@ const Navbar = () => {
           </div>
           <label className="mb-0">
             <AiOutlineSearch
-              className="text-xl  md:text-3xl md:cursor-pointer  "
+              className="text-xl  md:text-3xl md:cursor-pointer   "
               onClick={show}
             />
           </label>
@@ -171,11 +167,13 @@ const Navbar = () => {
             <AiOutlineUser className="text-2xl   md:text-3xl" />
           </Link>
           <div className="text-[#007bff] cursor-pointer hover:text-[#0056b3] relative store_hover_show">
+          <Link to='/cart'>
             <AiOutlineShoppingCart
               className="text-2xl md:text-3xl"
               onClick={() => setActiveModel(!activeModel)}
             />
-            <div className="w-5 h-5 rounded-2xl bg-[#00badb] absolute text-white text-center leading-[18px] inset-[0] inset-x-[15px] hover:w-6 hover:h-6 hover:leading-[20px] ease-linear duration-75">
+            </Link>
+            <div className= "w-5 h-5 rounded-2xl bg-[#00badb] absolute text-white text-center leading-[18px] inset-[0] inset-x-[15px] hover:w-6 hover:h-6 hover:leading-[20px] ease-linear duration-75">
               {productToBuyReducer?.length}
             </div>
             <div className="item_to_chose">

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const ProductInCart = ({ product, increment, decrement,remove }) => {
+  
   return (
     <div>
     <div className="border-2  p-3 my-5  mx-4 w-[90%] md:w-full h-auto">
       <div className="flex gap-x-10">
         <div className="flex flex-col w-1/3 justify-around items-center gap-5">
-          <img src={product.url} alt="" className=" cover w-full md:w-[50%]" />
+          <img src={product.photo} alt="" className=" cover w-full md:w-[50%]" />
           <AiOutlineClose className="text-red-500 md:text-3xl md:font-bold"  onClick={() => remove(product.id)}/>
         </div>
         <div className="flex flex-col w-2/3 ">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+
 import { BsPlus, BsPatchCheckFill } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
 //scss
@@ -45,6 +46,11 @@ export default function FeatureBrandDetail() {
       setamount(amount - 1);
     }
   };
+  const scrollToTop = () => {
+    dispatch(actSaveProduct({...location.state, amount}))
+    window.scrollTo(0, 0)
+    
+  }
 
   return (
     <div>
@@ -127,8 +133,10 @@ export default function FeatureBrandDetail() {
                         />
                       </div>
                       <div>
-                        <button className="bg-orange-500 py-2 px-5  text-white hover:bg-orange-400 ">
+                        <button  className="bg-orange-500 py-2 px-5  text-white hover:bg-orange-400 ">
+                        
                           Click Buy
+                        
                         </button>
                       </div>
                     </div>
@@ -145,9 +153,11 @@ export default function FeatureBrandDetail() {
                 <button 
                   className="ease-linear	duration-300 bg-[#fa9405] mt-8 h-12 text-white w-6/12 hover:bg-[rgba(250,148,5,.8)]" 
                   onClick={
-                    () => dispatch(actSaveProduct({...location.state, amount}))
+                    () => scrollToTop()
                 }>
-                  Add to card
+                  
+                  Add to cart
+              
                 </button>
               </div>
             </div>

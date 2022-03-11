@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { actSaveProduct } from "../saveProductToBuyReducer/reducer";
 import InfoCustomer from "./InfoCustomer";
 import InfoOrder from "./InfoOrder";
 import ProductInCart from "./ProductInCart";
-
 const data = [
   {
     id: 1,
@@ -28,11 +30,20 @@ const data = [
 ];
 const Cart = () => {
   const [listProduct, setListProduct] = useState([]);
-
+  const dispatch = useDispatch()
+  const location = useLocation();
+  dispatch(actSaveProduct({...location.state}))
+  const { product } = useSelector((state) => state.productToBuyReducer);
   useEffect(() => {
-    setListProduct(data);
-    console.log(listProduct);
+    setListProduct(product);
   }, []);
+
+  {
+    product.map((item, index) => {
+      console.log(item.name)
+    }
+    )
+  }
 
   const handleIncrement = (id) => {
     setListProduct((prev) =>

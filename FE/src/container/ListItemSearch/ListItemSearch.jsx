@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 export default function ListItemSearch({
   handleValue,
   focusFill,
   focus,
   setOpen,
-  setfocus
+  setfocus,
 }) {
   let valueInput = handleValue?.target.value;
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export default function ListItemSearch({
       })}
       {newDataProduct?.length == 0 && (
         <p className="text-center leading-[1.5] m-auto p-[inherit]">
-          -- no result--
+          -- chưa có sản phẩm nào --
         </p>
       )}
     </div>

@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<ClientLayOut />}>
             {renderLayout(clientRoutes)}
           </Route>
-          <Route path="*" element={<h1>page not found</h1>} />
+          <Route path="*" element={<img src="https://c.neh.tw/thumb/f/720/f307e47f32574e0486ed.jpg"  className="w-[70%] h-[70%] bg-cover mx-auto"/>} />
         </Routes>
       </Router>
     </>
