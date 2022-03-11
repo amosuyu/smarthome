@@ -84,7 +84,7 @@ export default function SliderFeaturedBrand() {
 
   return (
     <div className="slider_feature_brand">
-      <p className="text_content"> Featured Brand - Insteon </p>
+      <p className="text_content" onClick={() => navigate('/products')}> Featured Brand - Insteon </p>
       <Slider {...settings}>
         {dataProduct?.map((item, index) => {
           const { title, price, photo } = item;

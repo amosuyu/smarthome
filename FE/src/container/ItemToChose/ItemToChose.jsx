@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import './style.scss'
+import React from "react";
+import { useDispatch } from "react-redux";
+import "./style.scss";
 import { AiFillDelete } from "react-icons/ai";
 
-import {
-  actRemoveProduct,
-} from "container/Client/saveProductToBuyReducer/reducer";
+import { actRemoveProduct } from "container/Client/saveProductToBuyReducer/reducer";
 
 export default function ItemToChose({ item }) {
   const { photo, price, id } = item;

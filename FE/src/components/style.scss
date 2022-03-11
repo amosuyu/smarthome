@@ -5,8 +5,7 @@
         top: 50px;
         background-color: whitesmoke;
         min-height: 0;
-        min-width: 10rem;
-        overflow: hidden;
+        min-width: 13rem;
         transition: all 0.2s linear;
         transition-delay: 0.3s;
         transform: scaleY(0);
@@ -16,6 +15,18 @@
         justify-content: center;
         flex-direction: column;
         padding: 0 10px;
+
+        ::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid whitesmoke;
+            position: absolute;
+            top: -15px;
+            right: 0;
+        }
     }
 
     &:hover {
