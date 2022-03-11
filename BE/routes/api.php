@@ -8,8 +8,8 @@ use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\VoucherController;
-
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,8 +24,7 @@ use App\Http\Controllers\BlogController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
+Route::post('register', [RegisterController::class, 'register']);
 Route::controller(PostController::class)->group(function () {
     Route::get('Posts', 'index');
     Route::post('Posts', 'store');
