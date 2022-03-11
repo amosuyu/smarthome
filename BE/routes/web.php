@@ -19,7 +19,6 @@ Route::get('/',  [AdminLoginController::class, 'getLogin'])->name('getLogin');
 Route::post('/', [AdminLoginController::class, 'postLogin']);
 // Route::get('quantri', [AdminLoginController::class, 'index'])->middleware('checkAdminLogin');
 
-<<<<<<< HEAD
 
 Route::get('logout', [AdminLoginController::class, 'getLogout']);
 Route::group(['middleware' => 'checkAdminLogin', 'prefix' => 'quantri'], function() {
@@ -45,29 +44,4 @@ Route::group(['middleware' => 'checkAdminLogin', 'prefix' => 'quantri'], functio
         Route::put('blog/update/{id}', 'update');
         Route::delete('blog/detele/{id}', 'destroy');
     });
-=======
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-$router->group(['prefix' => 'api', 'middleware' => ['cors']], function () use ($router) {
-
-    // Category
-    $router->get('/category', 'CategoryController@index');
-    $router->post('/category', 'CategoryController@store');
-    $router->put('/category/update/{id}', 'CategoryController@update');
-    $router->delete('/category/{id}', 'CategoryController@destroy');
-    // Product
-    $router->get('/products', 'ProductController@index');
-    $router->get('/products', 'ProductController@index');
-    $router->get('/products/{id}', 'ProductController@show');
-    $router->get('/products/category/{id}', 'ProductController@showbycategory');
-    $router->post('/products/create', 'ProductController@store');
-    $router->post('/products/update/{id}', 'ProductController@update');
-    $router->delete('/products/detele/{id}', 'ProductController@destroy');
-    // post
-    $router->get('/Posts', 'PostController@index');
-    $router->post('/Posts', 'PostController@store');
-    $router->post('/Posts/{id}', 'PostController@update');
-    $router->delete('/Posts/{id}', 'PostController@destroy');
->>>>>>> origin
 });
