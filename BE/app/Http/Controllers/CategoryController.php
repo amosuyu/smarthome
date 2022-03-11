@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
-use App\Models\Categories;
+use App\Models\Category;
 class CategoryController extends Controller
 {
+    public function GetAll(){
+        // $Category = Category::all();
+        // return Response()->json($Category);
+        return view('admin.category.index', ['Categories' => Category::GetAll()]);
+    }
     public function index(){
-        $Category = Categories::all();
+        $Category = Category::all();
         return Response()->json($Category);
     }
     public function store(Request $request){
@@ -16,7 +21,7 @@ class CategoryController extends Controller
             'title' => 'required',
             'description'=> 'required'
         ]);
-        $Category = new Categories();
+        $Category = new Category();
         $Category->title = $request->input('title');          
         $Category->description = $request->input('description');        
         $Category->save();
@@ -27,7 +32,7 @@ class CategoryController extends Controller
             'title' => 'required',
             'description'=> 'required'
         ]);
-        $Category = new Categories();
+        $Category = new Category();
         $Category->title = $request->input('title');          
         $Category->description = $request->input('description');        
         $Category->save();
@@ -35,7 +40,7 @@ class CategoryController extends Controller
     }
     public function destroy($id)
     {
-        $Category= Categories::findOrFail($id);
+        $Category= Category::findOrFail($id);
         $Category->delete();
         return response()->json('Category detele seccessfully!'); 
     }

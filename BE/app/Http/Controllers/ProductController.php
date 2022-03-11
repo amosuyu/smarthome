@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Categories;
+use App\Models\Category;
 class ProductController extends Controller
 {
 
     public function index()
     {
+      
         $products= Product::all();
         return response()->json($products); 
     }
-
+    public function GetAll()
+    {
+        return view('admin.product.index', ['products' => Product::GetAll()]);
+    }
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -37,7 +41,7 @@ class ProductController extends Controller
             }
         }
         
-        if(Categories::find($request->input('category_id'))){
+        if(Category::find($request->input('category_id'))){
             $product->title = $request->input('title');        
             $product->price = $request->input('price');        
             $product->description = $request->input('description');      
