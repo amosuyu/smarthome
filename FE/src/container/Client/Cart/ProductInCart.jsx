@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 const ProductInCart = ({ product, increment, decrement,remove }) => {
-  
   return (
     <div>
     <div className="border-2  p-3 my-5  mx-4 w-[90%] md:w-full h-auto">
