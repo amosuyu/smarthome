@@ -1,3 +1,0 @@
-export const NAV_BAR_REQUEST = "NAV_BAR_REQUEST"
-export const NAV_BAR_SUCCESS = "NAV_BAR_SUCCESS"
-export const NAV_BAR_FAIL = "NAV_BAR_FAIL"
