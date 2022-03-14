@@ -8,7 +8,7 @@ import {  actListProducts } from "./module/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-export default function SliderFeaturedBrand() {
+export default function SliderFeaturedBrand(item) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { dataProduct, loadding } = useSelector(
@@ -82,6 +82,7 @@ export default function SliderFeaturedBrand() {
     dispatch(actListProducts());
   }, []);
 
+
   return (
     <div className="slider_feature_brand">
       <p className="text_content"> Featured Brand - Insteon </p>
@@ -107,7 +108,7 @@ export default function SliderFeaturedBrand() {
                   <p className="name_text_crs_home">{title}</p>
                   <p className="price_crs_home">{price} $</p>
                   <button
-                    onClick={() => navigate("/feature", { state: item })}
+                    onClick={()=>  navigate("/feature",  { state: item })}
                     className="btn_main btn_chose"
                   >
                     Chose option

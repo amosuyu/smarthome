@@ -49,6 +49,7 @@ export default function FeatureBrandDetail() {
   const scrollToTop = () => {
     dispatch(actSaveProduct({...location.state, amount}))
     window.scrollTo(0, 0)
+    alert('product added to cart, please check yourcart')
     
   }
 
