@@ -1,7 +1,7 @@
 import Login from "container/auth/Login";
 import ClientHome from "container/Client/ClientHome/ClientHome";
 import FeatureBrandDetail from "container/Client/FeatureBrandDetail/FeatureBrandDetail";
-import SignupForm from "container/auth/SingUp";
+import SignupForm from "container/auth/SignUp";
 import Cart from "container/Client/Cart/Cart";
 
 

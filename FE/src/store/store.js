@@ -5,11 +5,16 @@ import thunk from "redux-thunk"
 import { productReducer } from "container/Client/ClientHome/SliderFeaturedBrand/module/reducer"
 import { categoryReducer } from "components/module/reducer"
 import { productToBuyReducer } from "container/Client/saveProductToBuyReducer/reducer"
+import { LogintReducer } from "container/auth/module/reducer";
+
 
 export const rootReducer = combineReducers({
     productReducer,
     categoryReducer,
-    productToBuyReducer
+    productToBuyReducer,
+    LogintReducer
+    
+
 
 })
 

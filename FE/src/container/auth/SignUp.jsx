@@ -1,5 +1,7 @@
 import { useFormik } from "formik";
 import * as Yup from 'yup';
+import {Link} from 'react-router-dom'
+
 
 
 
@@ -19,11 +21,11 @@ const SignupForm = () => {
       password : Yup.string().required("Bắt buộc").matches( /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]{7,19}$/, "Mật khẩu phải trên 8 kí tự, bao  gồm chữ in hoa và kí tự đặc biệt"),
       confirmedPassword : Yup.string().required("Bắt buộc").oneOf([Yup.ref("password"), null, "Mật khẩu không khớp, vui lòng nhập lại"])
     }),
-    onSubmit : (values) =>{
-      window.alert("Đăng kí thành công ")
-      console.log(values)
-    }
-  })
+    onSubmit: (values) => {
+      window.alert("Dang ki thanh cong");
+      console.log(values);
+    },
+  });
   return (
     <section className="border-2 mx-auto w-[80%] mt-5">
       <h1 className="text-center">Sign Up</h1>
@@ -80,7 +82,10 @@ const SignupForm = () => {
         {formik.errors.confirmedPassword && (
           <p className="text-red-500 text-[10px] italic"> {formik.errors.confirmedPassword} </p>
         )}
-        <button type="submit" className="py-2  mt-3 w-1/2 mx-auto rounded-xl text-white hover:bg-blue-700 bg-blue-500 mb-4"> Continue </button>
+         <button type="submit" className="py-2  mt-3 w-1/2 mx-auto rounded-xl text-white hover:bg-blue-700 bg-blue-500 mb-4"> Continue </button>
+         <div>
+           <Link to='/login'>Login</Link>
+         </div>
       </form>
     </section>
     )

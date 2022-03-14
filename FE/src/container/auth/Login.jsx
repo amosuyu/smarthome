@@ -1,104 +1,69 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import  Link  from "react-router-dom";
+import { useFormik }  from "formik";
+import * as Yup from 'yup';
+import {Link, useNavigate} from 'react-router-dom';
+import { actLogin } from "./module/action";
+import { useDispatch,useSelector } from "react-redux";
 
 
-
-const theme = createTheme();
-
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+const Login = (values) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const formik = useFormik({
+    initialValues : {
+      username : "",
+      password : ""
+    },
+    validationSchema : Yup.object({
+      username : Yup.string().required("Bắt buộc").min(4, "Tên người dùng phải hơn 4 kí tự"),
+      password : Yup.string().required("Bắt buộc").matches( /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]{7,19}$/, "Mật khẩu phải trên 8 kí tự, bao  gồm chữ in hoa và kí tự đặc biệt")
+    }),
+    onSubmit: (values) => {
+      window.alert("Dang nhap thanh cong");
+      console.log(values.username);
+    },   
+    LogintReducer()
+  });
   
 
+  
   return (
-    <ThemeProvider theme={theme} >
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="/" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link  href='/signup' variant="body2" className='cursor-pointer'>
-               
-                  {"Don't have an account? Sign Up"}
-           
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-      
-      </Container>
-    </ThemeProvider>
-  );
+    <div className="border-[1px] w-[80%] mx-auto mt-5">
+            <h2 className="text-center">Login</h2>
+        <form onSubmit={formik.handleSubmit} className="flex flex-col px-3  ">
+        <label className="font-semibold text-[14px]"> Your name </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={formik.values.username}
+          onChange={formik.handleChange}
+          placeholder="Enter your name"
+          className="border-[1px] placeholder-slate-400 p-2 placeholder:text-sm"
+        />
+        {formik.errors.name && (
+          <p className="text-red-500 text-[10px] italic"> {formik.errors.username} </p>
+        )}
+         <label className="font-semibold text-[14px]"> Password </label>
+        <input
+          type="text"
+          id="password"
+          name="password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          placeholder="Enter your password"
+          className="border-[1px] placeholder-slate-400 p-2 placeholder:text-sm"
+        />
+        {formik.errors.password && (
+          <p className="text-red-500 text-[10px] italic"> {formik.errors.password} </p>
+        )} 
+        <button type="submit" className="w-1/3 bg-blue-500 text-white py-2 mx-auto mb-3 rounded-2xl hover:bg-blue-400" on>LOGIN</button>
+       
+        <div>
+          <Link to='/signup'>Signup</Link>
+        </div>
+        </form>
+
+    </div>
+  )
 }
+export default Login
