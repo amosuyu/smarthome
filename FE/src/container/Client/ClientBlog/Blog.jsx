@@ -70,22 +70,28 @@ const Blog = () => {
               }
             }]
       };
+      const handleScrollTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
     return ( 
         <>
-            <div className="w-[90%] mx-auto mb-[20px] font-lora">
-                <h2 className="text-[#1e2d7d] text-[25px]">Bài viết</h2>
+            <div className="md:w-[90%] md:mx-auto mb-[20px] font-lora">
+                <h2 className="text-[#1e2d7d] md:text-[25px] md:ml-0 text-[20px] font-bold ml-[20px]">Bài viết</h2>
             </div>
-            <Slider {...settings} className="xl:w-[90%] xl:mx-auto md:w-[100%] font-lora " >
+            <Slider {...settings} className="md:w-[90%] md:mx-auto w-full font-lora " >
                 {data.map(post => (
-                    <div to="" className="group block w-full h-[300px] relative " key={post.id}>
-                        <div className="xl:w-[99%] h-full xl:border-[#dfdfdf] xl:border-2 md:w-full">
-                            <img src={post.image} alt="" className="w-full h-full object-cover"/>
+                    <div className="group block w-full md:h-[210px] h-[200px] relative " key={post.id}>
+                        <div className="md:w-[99%] h-full md:border-[#bdbdbd] md:border-2 w-full">
+                            <img src={post.image} alt="" className="w-full h-full bg-cover"/>
                         </div>
-                        <Link id="RouterNavLink" to="/blog" className="w-full h-full absolute z-[1010] top-0 left-0">
-                            <div  className="xl:absolute xl:z-[1000] xl:top-0 xl:left-0 xl:w-[99%] xl:h-full xl:bg-[#444] text-center xl:opacity-0 group-hover:opacity-80 xl:transition-opacity ">
-                                <div className="xl:w-full xl:absolute xl:bottom-1 xl:opacity-1 wrap-title-blog">
-                                    <h2 className="xl:text-[20px] xl:font-medium hover:no-underline text-[#fff] hover:text-[#007aff] title-blog transition-all">{post.title.toUpperCase()}</h2>
-                                    <span className="xl:text-[15px] text-[#d4d4d4c9] text-left title-small">blogs - {post.time}</span>
+                        <Link 
+                            id="RouterNavLink" 
+                            to="/blog-id" 
+                            className="w-full h-full absolute z-[1010] top-0 left-0"
+                            onClick={() => handleScrollTop()}
+                        >
+                            <div  className="md:absolute md:z-[1000] md:top-0 md:left-0 md:w-[99%] md:h-full md:bg-[#444] text-center md:opacity-0 group-hover:opacity-80 md:transition-opacity ">
+                                <div className="md:w-full md:absolute md:bottom-1 md:opacity-1 wrap-title-blog">
+                                    <h2 className="md:text-[18px] md:font-bold hover:no-underline text-[#fff] hover:text-[#007aff] title-blog transition-all mt-[10px]">{post.title.toUpperCase()}</h2>
+                                    <span className="md:text-[15px] text-[#d4d4d4c9] text-left title-small">blogs - {post.time}</span>
                                 </div>
                                 
                             </div>

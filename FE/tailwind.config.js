@@ -4,15 +4,14 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'md': '450px',
-      'xl': '1280px'
+      'md': '1023px',
     },
     extend: {
       gridTemplateRows: {
         '[auto,auto,1fr]': 'auto auto 1fr',
       },
       fontFamily: {
-        'lora': '"Lora", serif',
+        'poppins': '"Poppins", sans-serif',
       }
     },
   },

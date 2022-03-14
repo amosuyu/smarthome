@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "./style.scss";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { actListCategory } from "./module/action";
+import {  actListProducts } from "./module/action";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -79,7 +79,7 @@ export default function SliderFeaturedBrand() {
   };
 
   useEffect(() => {
-    dispatch(actListCategory());
+    dispatch(actListProducts());
   }, []);
 
   return (
@@ -98,14 +98,14 @@ export default function SliderFeaturedBrand() {
                   />
                   <div className="hover_img_crs_home">
                     <img
-                      src="https://cf.shopee.vn/file/3e42d6c4fe4b3153f9d70d5075e0f3d2"
+                      src={`http://localhost:8000/images/${photo}`}
                       alt="..."
                     />
                   </div>
                 </div>
                 <div className="content_modal_crs_home">
                   <p className="name_text_crs_home">{title}</p>
-                  <p className="price_crs_home">{price}</p>
+                  <p className="price_crs_home">{price} $</p>
                   <button
                     onClick={() => navigate("/feature", { state: item })}
                     className="btn_main btn_chose"

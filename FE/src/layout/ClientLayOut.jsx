@@ -1,4 +1,4 @@
-
+import Footer from "components/Footer";
 import Header from "components/Header";
 import Navbar from "components/Navbar";
 import React from "react";
@@ -10,11 +10,10 @@ import HeroSlider from "container/Client/ClientHome/Slide/HeroSlider";
 export default function ClientLayOut() {
   return (
     <>
-            <Header />
-            <Navbar />
-            <Outlet />
-            
-      {/* <Footer /> */}
+      <Header />
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
-  );
+  )
 }
